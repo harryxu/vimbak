@@ -1,5 +1,8 @@
 *.swp
 *.bak
-.VimballRecord
+
+.*
+!.gitignore
+
 /tags
 
