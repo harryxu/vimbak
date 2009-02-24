@@ -76,7 +76,8 @@ endif
 
 if g:os == 'win'
     " 代码字体和大小 
-    set guifont=Consolas:h12
+    "set guifont=Consolas:h12
+    set guifont=Bitstream_Vera_Sans_Mono:h11
     "set guifont=Consolas:h13:b
     "set guifontwide=宋体:h11
     set linespace=0 
