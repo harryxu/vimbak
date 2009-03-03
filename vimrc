@@ -36,6 +36,7 @@ set cursorline
 " 隐藏菜单栏和工具栏
 "set go-=m
 set go-=T
+set go+=b
 
 " 搜索忽略大小写 ="
 set ignorecase
@@ -52,6 +53,8 @@ else
 endif
 
 set completeopt=longest,menu
+
+set nowrap
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
