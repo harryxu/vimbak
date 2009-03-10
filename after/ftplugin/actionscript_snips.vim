@@ -1,6 +1,9 @@
-if !exists('g:loaded_snips')
+if !exists('loaded_snips') || exists('s:did_actionscript_snips')
 	fini
 en
+
+let s:did_actionscript_snips = 1
+let snippet_filetype = 'actionscript'
 
 " get
 exe "Snipp get ${1:public} function get ${2:name}():${3:type}\n{\n\treturn ${4:null};\n}"
