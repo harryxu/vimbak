@@ -46,7 +46,7 @@ set hlsearch
 set wildmenu
 
 if $COLORTERM == 'gnome-terminal'
-    "set term=gnome-256color
+    set term=gnome-256color
     "colorscheme railscasts
 else
     "colorscheme default
@@ -88,8 +88,8 @@ elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
     "set guifont=Monaco\ 9
-    "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
-    set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
+    "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
     set gfw=WenQuanYi\Zen\Hei\ 9
     set linespace=2 
 elseif g:os == 'mac'
@@ -206,6 +206,12 @@ set noswapfile
     " PHP 
     """"""""""""""""""""""""""""""
     let php_sql_query = 1
+
+    """"""""""""""""""""""""""""""
+    " XML 
+    """"""""""""""""""""""""""""""
+    au BufRead *.xml set wrap
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
