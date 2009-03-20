@@ -88,15 +88,15 @@ elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
     "set guifont=Monaco\ 9
-    set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
-    "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+    "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
     set gfw=WenQuanYi\Zen\Hei\ 9
     set linespace=2 
 elseif g:os == 'mac'
 endif
 
 " 配色方案
-colorscheme railscasts
+colorscheme moria
 
 " 打开代码高亮
 :syntax enable
