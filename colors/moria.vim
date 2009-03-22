@@ -144,7 +144,7 @@ if &background == "dark"
     hi htmlUnderlineItalic ctermbg=Black ctermfg=White guibg=bg guifg=fg gui=underline,italic
 elseif &background == "light"
     if s:moria_style == "light"
-        hi Normal ctermbg=White ctermfg=Black guibg=#f0f0f0 guifg=#000000 gui=none
+        hi Normal ctermbg=White ctermfg=Black guibg=#f8f8f8 guifg=#000000 gui=none
 
         hi CursorColumn ctermbg=LightGray ctermfg=Black guibg=#d8d8d8 gui=none
         hi CursorLine ctermbg=LightGray ctermfg=Black guibg=#d8d8d8 gui=none
@@ -159,7 +159,7 @@ elseif &background == "light"
         hi Folded guibg=#cfcfcf guifg=#404040 gui=bold
         hi LineNr guifg=#7a7a7a gui=none
         hi MoreMsg guibg=bg guifg=#505050 gui=bold
-        hi NonText ctermfg=DarkGray guibg=bg guifg=#7a7a7a gui=bold
+        hi NonText ctermfg=DarkGray guibg=bg guifg=#7a7a7a gui=none
         hi Pmenu guibg=#9a9a9a guifg=#000000 gui=none
         hi PmenuSbar guibg=#808080 guifg=fg gui=none
         hi PmenuThumb guibg=#c0c0c0 guifg=fg gui=none
@@ -174,7 +174,7 @@ elseif &background == "light"
         hi Folded guibg=#cfcfcf guifg=#25365a gui=bold
         hi LineNr guibg=#DFDFDF guifg=#666666 gui=none
         hi MoreMsg guibg=bg guifg=#2f4471 gui=bold
-        hi NonText ctermfg=DarkGray guibg=bg guifg=#375288 gui=bold
+        hi NonText ctermfg=DarkGray guibg=bg guifg=#375288 gui=none
         hi Pmenu guibg=#708bc5 guifg=#000000 gui=none
         hi PmenuSbar guibg=#4a6db5 guifg=fg gui=none
         hi PmenuThumb guibg=#a6b7db guifg=fg gui=none
@@ -189,7 +189,7 @@ elseif &background == "light"
     hi DiffAdd guibg=#008b00 guifg=#ffffff gui=none
     hi DiffChange guibg=#00008b guifg=#ffffff gui=none
     hi DiffDelete guibg=#8b0000 guifg=#ffffff gui=none
-    hi DiffText guibg=#0000cd guifg=#ffffff gui=bold
+    hi DiffText guibg=#0000cd guifg=#ffffff gui=none
     hi Directory guibg=bg guifg=#0000f0 gui=none
     hi ErrorMsg guibg=#ee2c2c guifg=#ffffff gui=bold
     hi IncSearch guibg=#ffcd78 gui=none
@@ -224,9 +224,9 @@ elseif &background == "light"
     hi MatchParen guibg=#00ffff gui=none
     hi PreProc guibg=bg guifg=#800090 gui=none
     hi Special guibg=bg guifg=#912f11 gui=none
-    hi Statement guibg=bg guifg=#1f3f81 gui=bold
+    hi Statement guibg=bg guifg=#1f3f81 gui=none
     hi Todo guibg=#ffff00 guifg=fg gui=none
-    hi Type guibg=bg guifg=#912f11 gui=bold
+    hi Type guibg=bg guifg=#912f11 gui=none
     hi Underlined ctermbg=White ctermfg=Black guibg=bg guifg=#0000cd gui=underline
 
     hi htmlBold ctermbg=White ctermfg=Black guibg=bg guifg=fg gui=bold
