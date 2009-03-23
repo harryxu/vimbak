@@ -141,6 +141,10 @@ elseif s:sienna_style == 'light'
     hi Statement gui=none guifg=#0033ff
     hi Function gui=none guifg=Black
 
+    hi xmlTag        guifg=#0033ff ctermfg=179 gui=NONE
+    hi xmlTagName    guifg=#0033ff ctermfg=179 gui=NONE
+    hi xmlEndTag     guifg=#0033ff ctermfg=179 gui=NONE
+
     hi htmlBold gui=bold
     hi htmlItalic gui=italic
     hi htmlUnderline gui=underline
