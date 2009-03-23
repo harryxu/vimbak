@@ -45,12 +45,6 @@ set hlsearch
 
 set wildmenu
 
-if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-    "colorscheme railscasts
-else
-    "colorscheme default
-endif
 
 set completeopt=longest,menu
 
@@ -96,7 +90,12 @@ elseif g:os == 'mac'
 endif
 
 " 配色方案
-colorscheme moria
+colorscheme sienna
+
+if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+    colorscheme railscasts
+endif
 
 " 打开代码高亮
 :syntax enable
