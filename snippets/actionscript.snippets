@@ -1,0 +1,37 @@
+# get and set
+snippet get
+	${1:public} function get ${2:name}():${3:Type}
+	{
+		return ${4:null};
+	}
+snippet set
+	${1:public} function set ${2:name}(${3:value}:${4:Type}):void
+	{
+		${5:_var} = $3;
+	}
+snippet gset
+	${1:public} function get ${2:name}():${3:Type}
+	{
+		return ${4:null};
+	}
+	${5:public} function set ${6}(${7:value}:$3):void
+	{
+		$4 = $7;
+	}
+
+# package
+snippet pkg
+	package ${1}
+	{
+	${2}
+	}
+
+# class
+snippet cls
+	${1:public} class ${2:`Filename()`} ${3}
+	{
+		public function $2(${4})
+		{
+			${5}
+		}
+	}

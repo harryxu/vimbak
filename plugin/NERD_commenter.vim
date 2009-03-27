@@ -934,7 +934,7 @@ function s:SetUpForNewFiletype(filetype, forceReset)
     else
         "print a disclaimer to the user :)
         if !g:NERDShutUp
-            call s:NerdEcho("Unknown filetype '".a:filetype."', setting delimiters by &commentstring.\nPleeeeease email the author of the NERD commenter with this filetype\nand its delimiters!", 0)
+            "call s:NerdEcho("Unknown filetype '".a:filetype."', setting delimiters by &commentstring.\nPleeeeease email the author of the NERD commenter with this filetype\nand its delimiters!", 0)
         endif
 
         "extract the delims from &commentstring

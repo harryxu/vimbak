@@ -216,6 +216,10 @@ set noswapfile
     """"""""""""""""""""""""""""""
     au FileType diff colorscheme railscasts
 
+    """"""""""""""""""""""""""""""
+    " snippets file for snipMate 
+    """"""""""""""""""""""""""""""
+    au BufRead *.snippets :set nofoldenable
 
 
 
