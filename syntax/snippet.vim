@@ -10,6 +10,6 @@ hi link snipComment   Comment
 hi link multiSnipText String
 hi link snipKeyword   Keyword
 hi link snipComment   Comment
-hi link placeHolder   SpecialKey
+hi link placeHolder   Special
 hi link tabStop       Special
 hi link snipCommand   String

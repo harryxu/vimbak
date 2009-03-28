@@ -59,6 +59,8 @@
 'loaded_nerd_comments'	NERD_commenter.txt	/*'loaded_nerd_comments'*
 'loaded_nerd_tree'	NERD_tree.txt	/*'loaded_nerd_tree'*
 'snippets'	snipMate.txt	/*'snippets'*
+.snippet	snipMate.txt	/*.snippet*
+.snippets	snipMate.txt	/*.snippets*
 :CVSEdit	vcscommand.txt	/*:CVSEdit*
 :CVSEditors	vcscommand.txt	/*:CVSEditors*
 :CVSUnedit	vcscommand.txt	/*:CVSUnedit*
@@ -107,9 +109,8 @@
 :VCSUpdate	vcscommand.txt	/*:VCSUpdate*
 :VCSVimDiff	vcscommand.txt	/*:VCSVimDiff*
 ExtractSnips()	snipMate.txt	/*ExtractSnips()*
+ExtractSnipsFile()	snipMate.txt	/*ExtractSnipsFile()*
 Filename()	snipMate.txt	/*Filename()*
-GlobalSnip	snipMate.txt	/*GlobalSnip*
-GlobalSnip!	snipMate.txt	/*GlobalSnip!*
 NERDComAlignedComment	NERD_commenter.txt	/*NERDComAlignedComment*
 NERDComAltDelim	NERD_commenter.txt	/*NERDComAltDelim*
 NERDComAppendComment	NERD_commenter.txt	/*NERDComAppendComment*
@@ -196,8 +197,12 @@ NERDTreeOptions	NERD_tree.txt	/*NERDTreeOptions*
 NERD_commenter.txt	NERD_commenter.txt	/*NERD_commenter.txt*
 NERD_tree.txt	NERD_tree.txt	/*NERD_tree.txt*
 ResetSnips()	snipMate.txt	/*ResetSnips()*
-Snipp	snipMate.txt	/*Snipp*
-Snipp!	snipMate.txt	/*Snipp!*
+RltvNmbr	RltvNmbr.txt	/*RltvNmbr*
+RltvNmbr-contents	RltvNmbr.txt	/*RltvNmbr-contents*
+RltvNmbr-copyright	RltvNmbr.txt	/*RltvNmbr-copyright*
+RltvNmbr-history	RltvNmbr.txt	/*RltvNmbr-history*
+RltvNmbr-manual	RltvNmbr.txt	/*RltvNmbr-manual*
+RltvNmbr.txt	RltvNmbr.txt	/*RltvNmbr.txt*
 Tlist_Get_Tag_Prototype_By_Line()	taglist.txt	/*Tlist_Get_Tag_Prototype_By_Line()*
 Tlist_Get_Tagname_By_Line()	taglist.txt	/*Tlist_Get_Tagname_By_Line()*
 Tlist_Set_App()	taglist.txt	/*Tlist_Set_App()*
@@ -236,7 +241,6 @@ bufexplorer-usage	bufexplorer.txt	/*bufexplorer-usage*
 bufexplorer.txt	bufexplorer.txt	/*bufexplorer.txt*
 buffer-explorer	bufexplorer.txt	/*buffer-explorer*
 c-support	csupport.txt	/*c-support*
-command-snippets	snipMate.txt	/*command-snippets*
 cs	surround.txt	/*cs*
 csupport	csupport.txt	/*csupport*
 csupport-Ctrl-j	csupport.txt	/*csupport-Ctrl-j*
@@ -337,7 +341,6 @@ drawit-usage	DrawIt.txt	/*drawit-usage*
 drawit-visblock	DrawIt.txt	/*drawit-visblock*
 drawit.txt	DrawIt.txt	/*drawit.txt*
 ds	surround.txt	/*ds*
-file-snippets	snipMate.txt	/*file-snippets*
 g:bufExplorerDefaultHelp	bufexplorer.txt	/*g:bufExplorerDefaultHelp*
 g:bufExplorerDetailedHelp	bufexplorer.txt	/*g:bufExplorerDetailedHelp*
 g:bufExplorerFindActive	bufexplorer.txt	/*g:bufExplorerFindActive*
@@ -348,7 +351,6 @@ g:bufExplorerShowUnlisted	bufexplorer.txt	/*g:bufExplorerShowUnlisted*
 g:bufExplorerSortBy	bufexplorer.txt	/*g:bufExplorerSortBy*
 g:bufExplorerSplitOutPathName	bufexplorer.txt	/*g:bufExplorerSplitOutPathName*
 g:drawit_insertmode	DrawIt.txt	/*g:drawit_insertmode*
-g:snippet_filetype	snipMate.txt	/*g:snippet_filetype*
 g:snippets_dir	snipMate.txt	/*g:snippets_dir*
 g:snips_author	snipMate.txt	/*g:snips_author*
 i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
@@ -370,11 +372,10 @@ snipMate-indenting	snipMate.txt	/*snipMate-indenting*
 snipMate-placeholders	snipMate.txt	/*snipMate-placeholders*
 snipMate-remap	snipMate.txt	/*snipMate-remap*
 snipMate-settings	snipMate.txt	/*snipMate-settings*
-snipMate-syntax	snipMate.txt	/*snipMate-syntax*
 snipMate-usage	snipMate.txt	/*snipMate-usage*
 snipMate.txt	snipMate.txt	/*snipMate.txt*
 snippet	snipMate.txt	/*snippet*
-snippet_filetype	snipMate.txt	/*snippet_filetype*
+snippet-syntax	snipMate.txt	/*snippet-syntax*
 snippets	snipMate.txt	/*snippets*
 surround	surround.txt	/*surround*
 surround-author	surround.txt	/*surround-author*

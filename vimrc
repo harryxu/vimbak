@@ -236,8 +236,11 @@ set noswapfile
 
     " ctags
     set tags=tags;/
-    set tags+=$VIMRUNTIME/tags/python.ctags
-    set tags+=$VIMRUNTIME/tags/django.ctags
+    if g:os == 'win'
+    elseif g:os == 'lnx'
+        set tags+=~/.vim/tags/codeIgniter.ctags
+        set tags+=~/.vim/tags/zf.ctags
+    endif
 
     """"""""""""""""""""""""""""""
     " NERDTree 
