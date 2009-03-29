@@ -204,7 +204,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " PHP 
     """"""""""""""""""""""""""""""
-    let php_sql_query = 1
+    "let php_sql_query = 1
 
     """"""""""""""""""""""""""""""
     " XML 
@@ -239,7 +239,6 @@ set noswapfile
     if g:os == 'win'
     elseif g:os == 'lnx'
         set tags+=~/.vim/tags/codeIgniter.ctags
-        set tags+=~/.vim/tags/zf.ctags
     endif
 
     """"""""""""""""""""""""""""""
@@ -257,14 +256,20 @@ set noswapfile
     if !exists('g:AutoComplPop_Behavior')
         let g:AutoComplPop_Behavior = {}
     endif
+    
+    """"""""""""""""""""""""""""""
+    " FuzzyFinder
+    """"""""""""""""""""""""""""""
+    map <C-K> :FuzzyFinderFile<CR>
+    
 
     " php
-    let g:AutoComplPop_Behavior['php'] = []
-    call add(g:AutoComplPop_Behavior['php'], {
-                \   'command'   : "\<C-x>\<C-o>",
-                \   'pattern'   : printf('\(->\|::\|\$\)\k\{%d,}$', 0),
-                \   'repeat'    : 0,
-                \})
+    "let g:AutoComplPop_Behavior['php'] = []
+    "call add(g:AutoComplPop_Behavior['php'], {
+                "\   'command'   : "\<C-x>\<C-o>",
+                "\   'pattern'   : printf('\(->\|::\|\$\)\k\{%d,}$', 0),
+                "\   'repeat'    : 0,
+                "\})
 
     " javascript
     let g:AutoComplPop_Behavior['javascript'] = []
