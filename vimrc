@@ -216,8 +216,13 @@ set noswapfile
     au FileType diff colorscheme railscasts
 
     """"""""""""""""""""""""""""""
-    " snippets file for snipMate 
+    " snipMate 
     """"""""""""""""""""""""""""""
+    " fix snippets_dir on windows
+    if g:os == 'win'
+        let snippets_dir = $VIMRUNTIME.'\..\vimfiles\snippets\'
+    endif
+
     au BufRead *.snippets :set nofoldenable
 
 
