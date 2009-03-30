@@ -139,7 +139,7 @@ elseif s:sienna_style == 'light'
 
     hi Label gui=bold,underline guifg=Sienna4
     hi Statement gui=none guifg=#0033ff
-    hi Function gui=none guifg=Black
+    hi Function gui=bold guifg=RoyalBlue4
 
     hi xmlTag        guifg=#0033ff ctermfg=179 gui=NONE
     hi xmlTagName    guifg=#0033ff ctermfg=179 gui=NONE
