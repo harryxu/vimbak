@@ -45,12 +45,6 @@ set hlsearch
 
 set wildmenu
 
-if $COLORTERM == 'gnome-terminal'
-    "set term=gnome-256color
-    "colorscheme railscasts
-else
-    "colorscheme default
-endif
 
 set completeopt=longest,menu
 
@@ -96,7 +90,12 @@ elseif g:os == 'mac'
 endif
 
 " 配色方案
-colorscheme railscasts
+colorscheme sienna
+
+if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+    colorscheme railscasts
+endif
 
 " 打开代码高亮
 :syntax enable
@@ -205,7 +204,23 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " PHP 
     """"""""""""""""""""""""""""""
-    let php_sql_query = 1
+    "let php_sql_query = 1
+
+    """"""""""""""""""""""""""""""
+    " XML 
+    """"""""""""""""""""""""""""""
+    au BufRead *.xml set wrap
+
+    """"""""""""""""""""""""""""""
+    " diff 
+    """"""""""""""""""""""""""""""
+    au FileType diff colorscheme railscasts
+
+    """"""""""""""""""""""""""""""
+    " snippets file for snipMate 
+    """"""""""""""""""""""""""""""
+    au BufRead *.snippets :set nofoldenable
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -221,8 +236,10 @@ set noswapfile
 
     " ctags
     set tags=tags;/
-    set tags+=$VIMRUNTIME/tags/python.ctags
-    set tags+=$VIMRUNTIME/tags/django.ctags
+    if g:os == 'win'
+    elseif g:os == 'lnx'
+        set tags+=~/.vim/tags/codeIgniter.ctags
+    endif
 
     """"""""""""""""""""""""""""""
     " NERDTree 
@@ -239,14 +256,20 @@ set noswapfile
     if !exists('g:AutoComplPop_Behavior')
         let g:AutoComplPop_Behavior = {}
     endif
+    
+    """"""""""""""""""""""""""""""
+    " FuzzyFinder
+    """"""""""""""""""""""""""""""
+    map <C-K> :FuzzyFinderFile<CR>
+    
 
     " php
-    let g:AutoComplPop_Behavior['php'] = []
-    call add(g:AutoComplPop_Behavior['php'], {
-                \   'command'   : "\<C-x>\<C-o>",
-                \   'pattern'   : printf('\(->\|::\|\$\)\k\{%d,}$', 0),
-                \   'repeat'    : 0,
-                \})
+    "let g:AutoComplPop_Behavior['php'] = []
+    "call add(g:AutoComplPop_Behavior['php'], {
+                "\   'command'   : "\<C-x>\<C-o>",
+                "\   'pattern'   : printf('\(->\|::\|\$\)\k\{%d,}$', 0),
+                "\   'repeat'    : 0,
+                "\})
 
     " javascript
     let g:AutoComplPop_Behavior['javascript'] = []

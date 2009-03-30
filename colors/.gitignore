@@ -1,0 +1,3 @@
+*.vim
+!./sienna.vim
+!./railscasts.vim
