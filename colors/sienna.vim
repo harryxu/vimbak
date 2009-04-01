@@ -96,10 +96,14 @@ hi phpEcho              guifg=#AE25AB gui=NONE
 
 hi pythonBuiltin guifg=#AE25AB gui=NONE
 
-hi xmlTag        guifg=#0033ff ctermfg=179 gui=NONE
-hi xmlTagName    guifg=#0033ff ctermfg=179 gui=NONE
-hi xmlEndTag     guifg=#0033ff ctermfg=179 gui=NONE
+hi xmlTag        guifg=#AE25AB ctermfg=179 gui=NONE
+hi xmlTagName    guifg=#AE25AB ctermfg=179 gui=NONE
+hi xmlEndTag     guifg=#AE25AB ctermfg=179 gui=NONE
 
+hi htmlTag       guifg=#666666 ctermfg=179 gui=NONE
+hi htmlTagName   guifg=#AE25AB ctermfg=179 gui=NONE
+hi htmlEndTag    guifg=#666666 ctermfg=179 gui=NONE
+hi htmlArg       guifg=DarkBlue gui=none
 hi htmlBold gui=bold
 hi htmlItalic gui=italic
 hi htmlUnderline gui=underline
