@@ -80,9 +80,9 @@ if g:os == 'win'
 elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
-    "set guifont=Monaco\ 9
+    set guifont=Monaco\ 9
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
-    set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+    "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
     set gfw=WenQuanYi\Zen\Hei\ 9
     set linespace=2 
 elseif g:os == 'mac'
@@ -216,6 +216,8 @@ set noswapfile
     " PHP 
     """"""""""""""""""""""""""""""
     "let php_sql_query = 1
+    let php_alt_blocks = 0
+    "let php_strict_blocks = 0
 
     """"""""""""""""""""""""""""""
     " XML 
