@@ -150,6 +150,18 @@ exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 imap <S-Insert>         <C-V>
 vmap <S-Insert>         <C-V>
 
+" move on windows
+map <C-K> <C-W>k
+map <C-J> <C-W>j
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
+" windows move
+set winaltkeys=no
+map <A-k> <C-W>K
+map <A-j> <C-W>J
+map <A-h> <C-W>H
+map <A-l> <C-W>L
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files and backups
@@ -264,7 +276,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " FuzzyFinder
     """"""""""""""""""""""""""""""
-    map <C-K> :FuzzyFinderFile<CR>
+    map <C-M> :FuzzyFinderFile<CR>
     
 
     " php
