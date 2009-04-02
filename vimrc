@@ -276,6 +276,12 @@ set noswapfile
     au FileType xml,html,xhtml nmap <C-I> <LocalLeader>%
 
     """"""""""""""""""""""""""""""
+    " xmledit
+    """"""""""""""""""""""""""""""
+    let g:miniBufExplMapCTabSwitchBufs = 1 
+
+
+    """"""""""""""""""""""""""""""
     " autocomplpop
     """"""""""""""""""""""""""""""
     if !exists('g:AutoComplPop_Behavior')
