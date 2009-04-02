@@ -229,15 +229,6 @@ set noswapfile
     """"""""""""""""""""""""""""""
     au FileType diff colorscheme railscasts
 
-    """"""""""""""""""""""""""""""
-    " snipMate 
-    """"""""""""""""""""""""""""""
-    " fix snippets_dir on windows
-    if g:os == 'win'
-        let snippets_dir = $VIMRUNTIME.'\..\vimfiles\snippets\'
-    endif
-
-    au BufRead *.snippets :set nofoldenable
 
 
 
@@ -269,17 +260,27 @@ set noswapfile
                 \ '\.jpg$', '\.png$', '\.gif$']
 
     """"""""""""""""""""""""""""""
+    " snipMate 
+    """"""""""""""""""""""""""""""
+    " fix snippets_dir on windows
+    if g:os == 'win'
+        let snippets_dir = $VIMRUNTIME.'\..\vimfiles\snippets\'
+    endif
+
+    au BufRead *.snippets :set nofoldenable
+    
+    """"""""""""""""""""""""""""""
+    " xmledit
+    """"""""""""""""""""""""""""""
+    " jump to the beginning or end of the tag block 
+    au FileType xml,html,xhtml nmap <C-I> <LocalLeader>%
+
+    """"""""""""""""""""""""""""""
     " autocomplpop
     """"""""""""""""""""""""""""""
     if !exists('g:AutoComplPop_Behavior')
         let g:AutoComplPop_Behavior = {}
     endif
-    
-    """"""""""""""""""""""""""""""
-    " FuzzyFinder
-    """"""""""""""""""""""""""""""
-    map <C-M> :FuzzyFinderFile<CR>
-    
 
     " php
     "let g:AutoComplPop_Behavior['php'] = []
