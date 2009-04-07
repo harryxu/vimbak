@@ -44,7 +44,7 @@ let g:colors_name = 'sienna'
 hi Normal gui=none guifg=Black guibg=#FFFFFF
 
 hi Cursor guifg=White guibg=Black
-hi LineNr gui=none guifg=#888888 guibg=#EEEEEE
+hi LineNr gui=none guifg=#666666 guibg=#CCCCCC
 hi NonText gui=bold guifg=DarkGray guibg=Grey95
 hi SpecialKey gui=none guifg=RoyalBlue4
 hi Title gui=bold guifg=Black

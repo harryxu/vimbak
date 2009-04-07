@@ -268,6 +268,11 @@ set noswapfile
     endif
 
     au BufRead *.snippets :set nofoldenable
+
+    """"""""""""""""""""""""""""""
+    " fuzzy finder
+    """"""""""""""""""""""""""""""
+    nnoremap <silent> <C-m> :FuzzyFinderFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
     
     """"""""""""""""""""""""""""""
     " xmledit
@@ -276,10 +281,14 @@ set noswapfile
     au FileType xml,html,xhtml nmap <C-I> <LocalLeader>%
 
     """"""""""""""""""""""""""""""
-    " xmledit
+    " miniBufExpl
     """"""""""""""""""""""""""""""
     let g:miniBufExplMapCTabSwitchBufs = 1 
 
+    """"""""""""""""""""""""""""""
+    " phpDocumentor
+    """"""""""""""""""""""""""""""
+    nmap <C-P> :call PhpDocSingle()<CR> 
 
     """"""""""""""""""""""""""""""
     " autocomplpop
