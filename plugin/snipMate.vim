@@ -1,7 +1,7 @@
 " File:          snipMate.vim
 " Author:        Michael Sanders
-" Version:       0.75
-" Last Modified: March 27 2009
+" Version:       0.78
+" Last Updated:  April 6, 2009
 " Description:   snipMate.vim implements some of TextMate's snippets features in
 "                Vim. A snippet is a piece of often-typed text that you can
 "                insert into your document using a trigger word followed by a "<tab>".
@@ -16,19 +16,13 @@ endif
 let loaded_snips = 1
 if !exists('snips_author') | let snips_author = 'Me' | endif
 
-au FileType objc,cpp,cs let &ft = expand('<amatch>').'.c'
-au FileType xhtml let &ft = 'xhtml.html'
 au BufRead,BufNewFile *.snippets\= set ft=snippet
 au FileType snippet setl noet fdm=indent
 
 let s:snippets = {} | let s:multi_snips = {}
 
 if !exists('snippets_dir')
-	let snippets_dir = $HOME.(has('win16') || has('win32') || has('win64') ?
-					\ '\vimfiles\snippets\' : '/.vim/snippets/')
-	if !isdirectory(snippets_dir)
-		let snippets_dir = fnamemodify(finddir('snippets', &rtp), ':p')
-	endif
+	let snippets_dir = substitute(globpath(&rtp, 'snippets/'), "\n", ',', 'g')
 endif
 
 fun! MakeSnip(scope, trigger, content, ...)
@@ -71,17 +65,16 @@ fun s:ProcessFile(file, ft, ...)
 			\  : MakeSnip(a:ft, keyword, text)
 endf
 
-fun! ExtractSnipsFile(file)
+fun! ExtractSnipsFile(file, ft)
 	if !filereadable(a:file) | return | endif
 	let text = readfile(a:file)
-	let ft = fnamemodify(a:file, ':t:r:s?-.*??')
 	let inSnip = 0
 	for line in text + ["\n"]
 		if inSnip && (line == '' || strpart(line, 0, 1) == "\t")
 			let content .= strpart(line, 1)."\n"
 			continue
 		elseif inSnip
-			call MakeSnip(ft, trigger, content[:-2], name)
+			call MakeSnip(a:ft, trigger, content[:-2], name)
 			let inSnip = 0
 		endif
 
@@ -104,31 +97,43 @@ fun! ResetSnippets()
 endf
 
 let g:did_ft = {}
-fun! GetSnippets(dir)
-	for ft in split(&ft, '\.')
+fun! GetSnippets(dir, filetypes)
+	for ft in split(a:filetypes, '\.')
 		if has_key(g:did_ft, ft) | continue | endif
-		for path in split(globpath(a:dir, ft.'\(-*\)\=/'), '\n')
-			call ExtractSnips(path, ft)
-		endfor
-		for path in split(globpath(a:dir, ft.'\(-*\)\=.snippets'), '\n')
-			call ExtractSnipsFile(path)
-		endfor
+		call s:DefineSnips(a:dir, ft, ft)
+		if ft == 'objc' || ft == 'cpp' || ft == 'cs'
+			call s:DefineSnips(a:dir, 'c', ft)
+		elseif ft == 'xhtml'
+			call s:DefineSnips(a:dir, 'html', 'xhtml')
+		endif
 		let g:did_ft[ft] = 1
+	endfor
+endf
+
+" Define "aliasft" snippets for the filetype "realft".
+fun s:DefineSnips(dir, aliasft, realft)
+	for path in split(globpath(a:dir, a:aliasft.'/')."\n".
+					\ globpath(a:dir, a:aliasft.'-*/'), "\n")
+		call ExtractSnips(path, a:realft)
+	endfor
+	for path in split(globpath(a:dir, a:aliasft.'.snippets')."\n".
+					\ globpath(a:dir, a:aliasft.'-*.snippets'), "\n")
+		call ExtractSnipsFile(path, a:realft)
 	endfor
 endf
 
 fun! TriggerSnippet()
 	if exists('g:SuperTabMappingForward')
 		if g:SuperTabMappingForward == "<tab>"
-			let g:SuperTabKey = "\<c-n>"
+			let SuperTabKey = "\<c-n>"
 		elseif g:SuperTabMappingBackward == "<tab>"
-			let g:SuperTabKey = "\<c-p>"
+			let SuperTabKey = "\<c-p>"
 		endif
 	endif
 
 	if pumvisible() " Update snippet if completion is used, or deal with supertab
-		if exists('g:SuperTabKey')
-			call feedkeys(g:SuperTabKey) | return ''
+		if exists('SuperTabKey')
+			call feedkeys(SuperTabKey) | return ''
 		endif
 		call feedkeys("\<esc>a", 'n') " Close completion menu
 		call feedkeys("\<tab>") | return ''
@@ -150,9 +155,11 @@ fun! TriggerSnippet()
 		let col = col('.') - len(trigger)
 		sil exe 's/'.escape(trigger, '.^$/\*[]').'\%#//'
 		return snipMate#expandSnip(col)
+	elseif exists('SuperTabKey')
+		call feedkeys(SuperTabKey)
+		return ''
 	endif
-	return exists('g:SuperTabKey') && getline('.')[col('.')-2] =~ '\S' 
-				\ ? g:SuperTabKey : "\<tab>"
+	return "\<tab>"
 endf
 
 " Check if word under cursor is snippet trigger; if it isn't, try checking if
@@ -160,9 +167,9 @@ endf
 fun s:GetSnippet(word, scope)
 	let word = a:word
 	wh !exists('g:snippet')
-		if exists('s:snippets["'.a:scope.'"]['''.word.''']')
+		if exists('s:snippets["'.a:scope.'"]["'.escape(word, '\"').'"]')
 			let g:snippet = s:snippets[a:scope][word]
-		elseif exists('s:multi_snips["'.a:scope.'"]['''.word.''']')
+		elseif exists('s:multi_snips["'.a:scope.'"]["'.escape(word, '\"').'"]')
 			let g:snippet = s:ChooseSnippet(a:scope, word)
 		else
 			if match(word, '\W') == -1 | break | endif

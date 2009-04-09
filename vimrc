@@ -73,17 +73,16 @@ endif
 
 if g:os == 'win'
     " 代码字体和大小 
-    "set guifont=Consolas:h12
-    set guifont=Bitstream_Vera_Sans_Mono:h11
+    set guifont=Consolas:h10.5
+    "set guifont=Bitstream_Vera_Sans_Mono:h10
     "set guifont=Consolas:h13:b
-    "set guifontwide=宋体:h11
     set linespace=0 
 elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
-    "set guifont=Monaco\ 9
+    set guifont=Monaco\ 9
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
-    set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+    "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
     set gfw=WenQuanYi\Zen\Hei\ 9
     set linespace=2 
 elseif g:os == 'mac'
@@ -151,6 +150,18 @@ exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 imap <S-Insert>         <C-V>
 vmap <S-Insert>         <C-V>
 
+" move on windows
+map <C-K> <C-W>k
+map <C-J> <C-W>j
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
+" windows move
+set winaltkeys=no
+map <A-k> <C-W>K
+map <A-j> <C-W>J
+map <A-h> <C-W>H
+map <A-l> <C-W>L
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files and backups
@@ -205,6 +216,8 @@ set noswapfile
     " PHP 
     """"""""""""""""""""""""""""""
     "let php_sql_query = 1
+    let php_alt_blocks = 0
+    "let php_strict_blocks = 0
 
     """"""""""""""""""""""""""""""
     " XML 
@@ -216,10 +229,6 @@ set noswapfile
     """"""""""""""""""""""""""""""
     au FileType diff colorscheme railscasts
 
-    """"""""""""""""""""""""""""""
-    " snippets file for snipMate 
-    """"""""""""""""""""""""""""""
-    au BufRead *.snippets :set nofoldenable
 
 
 
@@ -251,17 +260,42 @@ set noswapfile
                 \ '\.jpg$', '\.png$', '\.gif$']
 
     """"""""""""""""""""""""""""""
+    " snipMate 
+    """"""""""""""""""""""""""""""
+    " fix snippets_dir on windows
+    if g:os == 'win'
+        let snippets_dir = $VIMRUNTIME.'\..\vimfiles\snippets\'
+    endif
+
+    au BufRead *.snippets :set nofoldenable
+
+    """"""""""""""""""""""""""""""
+    " fuzzy finder
+    """"""""""""""""""""""""""""""
+    nnoremap <silent> <C-m> :FuzzyFinderFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
+    
+    """"""""""""""""""""""""""""""
+    " xmledit
+    """"""""""""""""""""""""""""""
+    " jump to the beginning or end of the tag block 
+    au FileType xml,html,xhtml nmap <C-I> <LocalLeader>%
+
+    """"""""""""""""""""""""""""""
+    " miniBufExpl
+    """"""""""""""""""""""""""""""
+    let g:miniBufExplMapCTabSwitchBufs = 1 
+
+    """"""""""""""""""""""""""""""
+    " phpDocumentor
+    """"""""""""""""""""""""""""""
+    nmap <C-P> :call PhpDocSingle()<CR> 
+
+    """"""""""""""""""""""""""""""
     " autocomplpop
     """"""""""""""""""""""""""""""
     if !exists('g:AutoComplPop_Behavior')
         let g:AutoComplPop_Behavior = {}
     endif
-    
-    """"""""""""""""""""""""""""""
-    " FuzzyFinder
-    """"""""""""""""""""""""""""""
-    map <C-K> :FuzzyFinderFile<CR>
-    
 
     " php
     "let g:AutoComplPop_Behavior['php'] = []

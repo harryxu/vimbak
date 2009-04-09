@@ -5,4 +5,7 @@
 !.gitignore
 
 /tags
-./doc/tags
+/session
+
+/ftplugin/html.vim
+

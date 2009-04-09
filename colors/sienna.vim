@@ -41,116 +41,74 @@ endif
 
 let g:colors_name = 'sienna'
 
-if s:sienna_style == 'dark'
-    hi Normal gui=none guifg=Grey85 guibg=Grey15
+hi Normal gui=none guifg=Black guibg=#FFFFFF
 
-    hi Cursor guifg=Black guibg=Grey85
-    hi LineNr gui=none guifg=Grey65
-    hi NonText gui=bold guifg=Grey65 guibg=Grey20
-    hi SpecialKey gui=none guifg=SkyBlue2
-    hi Title gui=bold guifg=Grey85
-    hi Visual gui=bold guifg=Black guibg=LightSalmon1
+hi Cursor guifg=White guibg=Black
+hi LineNr gui=none guifg=#666666 guibg=#CCCCCC
+hi NonText gui=bold guifg=DarkGray guibg=Grey95
+hi SpecialKey gui=none guifg=RoyalBlue4
+hi Title gui=bold guifg=Black
+hi Visual gui=none guibg=SkyBlue
 
-    hi FoldColumn gui=none guifg=Black guibg=Wheat3
-    hi Folded gui=none guifg=White guibg=Wheat4
-    hi StatusLine gui=bold guifg=Black guibg=Grey85
-    hi StatusLineNC gui=none guifg=White guibg=DimGray
-    hi VertSplit gui=none guifg=White guibg=DimGray
-    hi Wildmenu gui=bold guifg=White guibg=Black
+hi FoldColumn gui=none guifg=Black guibg=Wheat2
+hi Folded gui=none guifg=Black guibg=Wheat1
+hi StatusLine gui=bold guifg=White guibg=Black
+hi StatusLineNC gui=none guifg=White guibg=DimGray
+hi VertSplit gui=none guifg=White guibg=DimGray
+hi WildMenu guibg=#ffff00 guifg=fg gui=bold
 
-    hi Pmenu guibg=Grey55 guifg=Black gui=none
-    hi PmenuSbar guibg=Grey40 guifg=fg gui=none
-    hi PmenuSel guibg=Yellow2 guifg=Black gui=none
-    hi PmenuThumb guibg=Grey80 guifg=bg gui=none    
+hi Pmenu guibg=#EDEFE0 guifg=#000000 gui=none
+hi PmenuSbar guibg=#808080 guifg=fg gui=none
+hi PmenuThumb guibg=#c0c0c0 guifg=fg gui=none
+hi PmenuSel guibg=#1D719F guifg=#FFFFFF gui=none
 
-    hi IncSearch gui=none guifg=Grey15 guibg=Grey85
-    hi Search gui=none guifg=Black guibg=Yellow2
 
-    hi MoreMsg gui=bold guifg=PaleGreen2
-    hi Question gui=bold guifg=PaleGreen2
-    hi WarningMsg gui=bold guifg=Red
+hi IncSearch gui=none guifg=White guibg=Black
+hi Search gui=none guifg=Black guibg=Yellow
 
-    hi Comment gui=italic guifg=SkyBlue3
-    hi Error gui=none guifg=White guibg=Red2
-    hi Identifier gui=none guifg=LightSalmon2
-    hi Special gui=none guifg=SkyBlue2
-    hi PreProc gui=none guifg=SkyBlue3
-    hi Todo gui=bold guifg=Black guibg=Yellow2
-    hi Type gui=bold guifg=SkyBlue2
-    hi Underlined gui=underline guifg=DodgerBlue
+hi MoreMsg gui=bold guifg=ForestGreen
+hi Question gui=bold guifg=ForestGreen
+hi WarningMsg gui=bold guifg=Red
 
-    hi Boolean gui=bold guifg=PaleGreen2
-    hi Constant gui=none guifg=PaleGreen2
-    hi Number gui=bold guifg=PaleGreen2
-    hi String gui=none guifg=PaleGreen2
+hi Comment gui=italic guifg=DarkGreen
+hi Error gui=none guifg=White guibg=Red
+hi Identifier gui=none guifg=Black
+hi Special gui=none guifg=Blue
+hi PreProc gui=none guifg=RoyalBlue3
+hi Todo gui=bold guifg=Black guibg=Yellow
+hi Type gui=none guifg=#0036FF
+hi Underlined gui=underline guifg=Blue
 
-    hi Label gui=bold,underline guifg=LightSalmon2
-    hi Statement gui=bold guifg=LightSalmon2
+hi Boolean gui=bold guifg=RoyalBlue4
+hi Constant gui=none guifg=#AE25AB
+hi Number gui=none guifg=Black
+hi String gui=none guifg=DarkRed
 
-    hi htmlBold gui=bold
-    hi htmlItalic gui=italic
-    hi htmlUnderline gui=underline
-    hi htmlBoldItalic gui=bold,italic
-    hi htmlBoldUnderline gui=bold,underline
-    hi htmlBoldUnderlineItalic gui=bold,underline,italic
-    hi htmlUnderlineItalic gui=underline,italic
-elseif s:sienna_style == 'light'
-    hi Normal gui=none guifg=Black guibg=#F8F8F8
+hi Label gui=none guifg=#FF3300
+hi Statement gui=none guifg=#0033ff
+hi Function gui=none guifg=#AE25AB
 
-    hi Cursor guifg=White guibg=Black
-    hi LineNr gui=none guifg=#888888 guibg=#EEEEEE
-    hi NonText gui=bold guifg=DarkGray guibg=Grey95
-    hi SpecialKey gui=none guifg=RoyalBlue4
-    hi Title gui=bold guifg=Black
-    hi Visual gui=none guibg=SkyBlue
+" {} () 
+hi phpParent            guifg=Black   gui=none
+hi phpFunctions         guifg=#AE25AB gui=NONE
+hi phpSpecialFunction   guifg=#AE25AB gui=NONE
+hi phpEcho              guifg=#AE25AB gui=NONE
 
-    hi FoldColumn gui=none guifg=Black guibg=Wheat2
-    hi Folded gui=none guifg=Black guibg=Wheat1
-    hi StatusLine gui=bold guifg=White guibg=Black
-    hi StatusLineNC gui=none guifg=White guibg=DimGray
-    hi VertSplit gui=none guifg=White guibg=DimGray
-    hi Wildmenu gui=bold guifg=Black guibg=White
+hi pythonBuiltin guifg=#AE25AB gui=NONE
 
-    hi Pmenu guibg=Grey65 guifg=Black gui=none
-    hi PmenuSbar guibg=Grey50 guifg=fg gui=none
-    hi PmenuSel guibg=Yellow guifg=Black gui=none
-    hi PmenuThumb guibg=Grey75 guifg=fg gui=none
+hi xmlTag        guifg=#AE25AB ctermfg=179 gui=NONE
+hi xmlTagName    guifg=#AE25AB ctermfg=179 gui=NONE
+hi xmlEndTag     guifg=#AE25AB ctermfg=179 gui=NONE
 
-    hi IncSearch gui=none guifg=White guibg=Black
-    hi Search gui=none guifg=Black guibg=Yellow
-
-    hi MoreMsg gui=bold guifg=ForestGreen
-    hi Question gui=bold guifg=ForestGreen
-    hi WarningMsg gui=bold guifg=Red
-
-    hi Comment gui=italic guifg=DarkGreen
-    hi Error gui=none guifg=White guibg=Red
-    hi Identifier gui=none guifg=Black
-    hi Special gui=none guifg=Black
-    hi PreProc gui=none guifg=RoyalBlue3
-    hi Todo gui=bold guifg=Black guibg=Yellow
-    hi Type gui=bold guifg=RoyalBlue4
-    hi Underlined gui=underline guifg=Blue
-
-    hi Boolean gui=bold guifg=RoyalBlue4
-    hi Constant gui=none guifg=RoyalBlue4
-    hi Number gui=bold guifg=Black
-    hi String gui=none guifg=DarkRed
-
-    hi Label gui=bold,underline guifg=Sienna4
-    hi Statement gui=none guifg=#0033ff
-    hi Function gui=none guifg=Black
-
-    hi xmlTag        guifg=#0033ff ctermfg=179 gui=NONE
-    hi xmlTagName    guifg=#0033ff ctermfg=179 gui=NONE
-    hi xmlEndTag     guifg=#0033ff ctermfg=179 gui=NONE
-
-    hi htmlBold gui=bold
-    hi htmlItalic gui=italic
-    hi htmlUnderline gui=underline
-    hi htmlBoldItalic gui=bold,italic
-    hi htmlBoldUnderline gui=bold,underline
-    hi htmlBoldUnderlineItalic gui=bold,underline,italic
-    hi htmlUnderlineItalic gui=underline,italic
-endif
+hi htmlTag       guifg=#666666 ctermfg=179 gui=NONE
+hi htmlTagName   guifg=#AE25AB ctermfg=179 gui=NONE
+hi htmlEndTag    guifg=#666666 ctermfg=179 gui=NONE
+hi htmlArg       guifg=DarkBlue gui=none
+hi htmlBold gui=bold
+hi htmlItalic gui=italic
+hi htmlUnderline gui=underline
+hi htmlBoldItalic gui=bold,italic
+hi htmlBoldUnderline gui=bold,underline
+hi htmlBoldUnderlineItalic gui=bold,underline,italic
+hi htmlUnderlineItalic gui=underline,italic
 
