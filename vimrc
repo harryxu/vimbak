@@ -126,6 +126,26 @@ if g:os == 'win'
     :inoremap ] <c-r>=ClosePair(']')<CR>
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Parenthesis/bracket expanding
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+")
+vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+vnoremap $q <esc>`>a'<esc>`<i'<esc>
+vnoremap $w <esc>`>a"<esc>`<i"<esc>
+
+"Map auto complete of (, ", ', [
+inoremap $1 ()<esc>:let leavechar=")"<cr>i
+inoremap $2 []<esc>:let leavechar="]"<cr>i
+inoremap $4 {<esc>o}<esc>:let leavechar="}"<cr>O
+inoremap $3 {}<esc>:let leavechar="}"<cr>i
+inoremap $q ''<esc>:let leavechar="'"<cr>i
+inoremap $w ""<esc>:let leavechar='"'<cr>i
+
+
 " 插入当前时间
 :imap <C-D> <c-r>=strftime("<%Y-%m-%d %a %H:%M:%S>") . " harry"<CR>
 
@@ -293,6 +313,9 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " autocomplpop
     """"""""""""""""""""""""""""""
+    let g:AutoComplPop_MappingDriven = 1
+    let g:AutoComplPop_IgnoreCaseOption = 1
+
     if !exists('g:AutoComplPop_Behavior')
         let g:AutoComplPop_Behavior = {}
     endif
