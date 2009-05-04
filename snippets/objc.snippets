@@ -10,6 +10,9 @@ snippet sel
 # @"..." string
 snippet s
 	@"${1}"${2}
+# Object
+snippet o
+	${1:NSObject} *${2:foo} = [${3:$1 alloc}];${5}
 # NSLog(...)
 snippet log
 	NSLog(@"${1}"${2});${3}
@@ -46,6 +49,16 @@ snippet clm
 		}
 		return self;
 	}
+	@end
+# Interface
+snippet int
+	@interface
+	${1}
+	@end
+# Implementation
+snippet impl
+	@implementation
+	${1}
 	@end
 snippet ibo
 	IBOutlet ${1:NSSomeClass} *${2:$1};
@@ -124,23 +137,22 @@ snippet objacc
 		return $2;
 	}
 	
-	- (void) set$2:($1)
+	- (void)set$2:($1)${3:new$2}
 	{
-		$1 old$2 = $2;
-		$2 = [aValue retain];
-		[old$2 release];
-	}
+		[$3 retain];
+		[$2 release];
+		$2 = $3;
+	}${4}
 # for (object in array)
 snippet fora
 	for (${1:Class} *${2:Object} in ${3:array}) {
 		${4}
 	}
 snippet forarray
-	unsigned int	${1:object}Count = [${2:array} count];
+	unsigned int ${1:object}Count = [${2:array} count];
 	
-	for (unsigned int index = 0; index < $1Count; index++)
-	{
-		${3:id}	$1 = [$2 $1AtIndex:index];
+	for (unsigned int index = 0; index < $1Count; index++) {
+		${3:id} $1 = [$2 $1AtIndex:index];
 		${4}
 	}
 # IBOutlet
@@ -149,7 +161,7 @@ snippet prop
 	@property (${1:retain}) ${2:NSSomeClass} *${3:$2};${4}
 # @synthesize (Objective-C 2.0)
 snippet syn
-	@synthesize ${1:NSSomeClass};${2}
+	@synthesize ${1:property};${2}
 # [[ alloc] init]
 snippet alloc
 	[[${1:foo} alloc] init]${2};${3}
@@ -163,3 +175,15 @@ snippet rel
 # autorelease
 snippet arel
 	[${1:foo} autorelease];
+# autorelease pool
+snippet pool
+	NSAutoReleasePool *${1:pool} = [[NSAutoReleasePool alloc] init];
+	${2:/* code */}
+	[$1 release];
+# Throw an exception
+snippet except
+	NSException *${1:badness};
+	$1 = [NSException exceptionWithName:@"${2:$1Name}"
+	                             reason:@"${3}"
+	                           userInfo:nil];
+	[$1 raise];
