@@ -313,6 +313,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " autocomplpop
     """"""""""""""""""""""""""""""
+    let g:AutoComplPop_NotEnableAtStartup = 1
     let g:AutoComplPop_MappingDriven = 1
     let g:AutoComplPop_IgnoreCaseOption = 1
 
