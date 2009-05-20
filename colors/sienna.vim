@@ -41,7 +41,7 @@ endif
 
 let g:colors_name = 'sienna'
 
-hi Normal gui=none guifg=Black guibg=#FFFFFF
+hi Normal gui=none guifg=Black guibg=#F8F8F8
 
 hi Cursor guifg=White guibg=Black
 hi LineNr gui=none guifg=#666666 guibg=#CCCCCC
