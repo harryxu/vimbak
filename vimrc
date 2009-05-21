@@ -80,10 +80,10 @@ if g:os == 'win'
 elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
-    set guifont=Monaco\ Bold\ 10
+    set guifont=Monaco\ Bold\ 9
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
-    set gfw=WenQuanYi\Zen\Hei\ 10
+    set gfw=WenQuanYi\Zen\Hei\ 9
     set linespace=2 
 elseif g:os == 'mac'
 endif
