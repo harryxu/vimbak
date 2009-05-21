@@ -45,7 +45,7 @@ hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
 "hi Normal                    guifg=#DED8D3 guibg=#002240 cterm=bold
-hi Normal                    guifg=#DBDBDB guibg=#161616 cterm=bold
+hi Normal                    guifg=#DBDBDB guibg=#262626 cterm=bold
 hi Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15	
 hi CursorLine                guibg=#000000 ctermbg=233 cterm=NONE
 
@@ -65,7 +65,7 @@ hi PreCondit                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 hi Keyword                   guifg=#CC7833 ctermfg=173 gui=NONE
 hi LineNr                    guifg=#888888 ctermfg=159
 hi Number                    guifg=#EDEF81 ctermfg=107 gui=NONE
-hi PreProc                   guifg=#FFFFFF ctermfg=103 gui=NONE
+hi PreProc                   guifg=#CC7833 ctermfg=103 gui=NONE
 hi Search                    guifg=NONE ctermfg=NONE guibg=darkBlue ctermbg=235 gui=italic cterm=underline
 hi Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 hi String                    guifg=#A5C261 ctermfg=107 gui=NONE
