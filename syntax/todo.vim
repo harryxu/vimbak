@@ -25,6 +25,7 @@ syn match	todoContext	  /\s\?@\S\+/
 syn match	todoPriority	  /([A-Z])/
 syn match	todoDone	  /^x .*/ 
 syn match	todoDone	  /^\s\+x .*/ 
+syn match	todoDone	  /.*\s\[x\]/ 
 
 " Proposed new format for todo.txt -- must be backwards compatible
 syn keyword	todoCommand     INCLUDE contained todoComment

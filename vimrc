@@ -73,14 +73,14 @@ endif
 
 if g:os == 'win'
     " 代码字体和大小 
-    set guifont=Consolas:h10.5
+    set guifont=YaHei_Consolas_Hybrid:h10.5
     "set guifont=Bitstream_Vera_Sans_Mono:h10
     "set guifont=Consolas:h13:b
     set linespace=0 
 elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
-    set guifont=Monaco\ 9
+    set guifont=Monaco\ Bold\ 9
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
     set gfw=WenQuanYi\Zen\Hei\ 9
@@ -89,7 +89,7 @@ elseif g:os == 'mac'
 endif
 
 " 配色方案
-colorscheme sienna
+colorscheme railscasts
 
 if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
@@ -313,6 +313,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " autocomplpop
     """"""""""""""""""""""""""""""
+    let g:AutoComplPop_NotEnableAtStartup = 1
     let g:AutoComplPop_MappingDriven = 1
     let g:AutoComplPop_IgnoreCaseOption = 1
 
