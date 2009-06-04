@@ -237,6 +237,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     "let php_sql_query = 1
     let php_alt_blocks = 0
+    au FileType php imap .. ->
     "let php_strict_blocks = 0
 
     """"""""""""""""""""""""""""""
