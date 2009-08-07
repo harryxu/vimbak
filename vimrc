@@ -36,7 +36,9 @@ set cursorline
 " 隐藏菜单栏和工具栏
 "set go-=m
 set go-=T
-set go+=b
+
+" 横向滚动条
+"set go+=b
 
 " 搜索忽略大小写 ="
 set ignorecase
@@ -48,7 +50,7 @@ set wildmenu
 
 set completeopt=longest,menu
 
-set nowrap
+"set nowrap
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -80,10 +82,10 @@ if g:os == 'win'
 elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
-    set guifont=Monaco\ Bold\ 9
+    set guifont=Monaco\ Bold\ 10
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
-    set gfw=WenQuanYi\Zen\Hei\ 9
+    set gfw=WenQuanYi\Zen\Hei\ Bold\ 10
     set linespace=2 
 elseif g:os == 'mac'
 endif
@@ -237,6 +239,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     "let php_sql_query = 1
     let php_alt_blocks = 0
+    au FileType php imap .. ->
     "let php_strict_blocks = 0
 
     """"""""""""""""""""""""""""""
