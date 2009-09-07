@@ -34,7 +34,7 @@ set nu
 set cursorline
 
 " 隐藏菜单栏和工具栏
-"set go-=m
+set go-=m
 set go-=T
 
 " 横向滚动条
@@ -61,7 +61,7 @@ set completeopt=longest,menu
 "set fileencoding=utf-8
 "set fileencodings=utf-8,gb18030,utf-16,gb2312,big5
 set encoding=utf-8
-set fileencodings=utf-8,ucs-bom,default,latin1
+set fileencodings=utf-8,ucs-bom,gbk,gb2312,gb18030,default,latin1
 if g:os == 'win'
     language messages zh_CN.UTF-8
     source $VIMRUNTIME/delmenu.vim
@@ -82,10 +82,11 @@ if g:os == 'win'
 elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
-    set guifont=Monaco\ Bold\ 10
+    "set guifont=Monaco\ Bold\ 10
+    set guifont=Monaco\ 11
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
-    set gfw=WenQuanYi\Zen\Hei\ Bold\ 10
+    set gfw=WenQuanYi\Zen\Hei\ 11
     set linespace=2 
 elseif g:os == 'mac'
 endif
@@ -127,26 +128,6 @@ if g:os == 'win'
     :inoremap [ []<ESC>i
     :inoremap ] <c-r>=ClosePair(']')<CR>
 endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Parenthesis/bracket expanding
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-")
-vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-vnoremap $q <esc>`>a'<esc>`<i'<esc>
-vnoremap $w <esc>`>a"<esc>`<i"<esc>
-
-"Map auto complete of (, ", ', [
-inoremap $1 ()<esc>:let leavechar=")"<cr>i
-inoremap $2 []<esc>:let leavechar="]"<cr>i
-inoremap $4 {<esc>o}<esc>:let leavechar="}"<cr>O
-inoremap $3 {}<esc>:let leavechar="}"<cr>i
-inoremap $q ''<esc>:let leavechar="'"<cr>i
-inoremap $w ""<esc>:let leavechar='"'<cr>i
-
 
 " 插入当前时间
 :imap <C-D> <c-r>=strftime("<%Y-%m-%d %a %H:%M:%S>") . " harry"<CR>
