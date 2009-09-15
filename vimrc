@@ -112,23 +112,6 @@ map <F2> :nohlsearch<CR>
 " omni
 imap <C-L> <C-x><C-o>
 
-if g:os == 'win'
-    " 自动补全符号
-    function ClosePair(char)
-        if getline('.')[col('.') - 1] == a:char
-            return "\<Right>"
-        else
-            return a:char
-        endif
-    endf
-    :inoremap ( ()<ESC>i
-    :inoremap ) <c-r>=ClosePair(')')<CR>
-    :inoremap { {}<ESC>i
-    :inoremap } <c-r>=ClosePair('}')<CR>
-    :inoremap [ []<ESC>i
-    :inoremap ] <c-r>=ClosePair(']')<CR>
-endif
-
 " 插入当前时间
 :imap <C-D> <c-r>=strftime("<%Y-%m-%d %a %H:%M:%S>") . " harry"<CR>
 
@@ -276,7 +259,9 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " fuzzy finder
     """"""""""""""""""""""""""""""
-    nnoremap <silent> <C-m> :FuzzyFinderFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
+    nmap <CR> :FufBuffer<CR>
+    nmap ,<CR> :FufFile<CR>
+    nmap ,b<CR> :FufDir<CR>
     
     """"""""""""""""""""""""""""""
     " xmledit
