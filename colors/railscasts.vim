@@ -71,7 +71,7 @@ hi Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 hi String                    guifg=#A5C261 ctermfg=107 gui=NONE
 hi Title                     guifg=#FFFFFF ctermfg=15 gui=NONE
 hi Type                      guifg=#9EF3A0 ctermfg=167 gui=NONE cterm=NONE
-hi Visual                    guibg=#5A647E ctermbg=60 gui=NONE
+hi Visual                    guibg=#01005F ctermbg=60 gui=NONE
 
 hi DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
 hi DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
