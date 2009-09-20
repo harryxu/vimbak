@@ -217,3 +217,12 @@ snippet fun
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+
+# array item not string value
+snippet ai
+	'${1:key}' => ${2:value},
+
+# array item. String value
+snippet sai
+	'${1:key}' => '${2:value}',
+
