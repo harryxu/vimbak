@@ -83,7 +83,7 @@ elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
     "set guifont=Monaco\ Bold\ 10
-    set guifont=Monaco\ 11
+    set guifont=Monaco\ 10
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
     set gfw=WenQuanYi\Zen\Hei\ 11
@@ -135,6 +135,9 @@ exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
 exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
 imap <S-Insert>         <C-V>
 vmap <S-Insert>         <C-V>
+
+" Ctrl c 复制到剪切板
+vnoremap <C-C> "+y
 
 " move on windows
 map <C-K> <C-W>k
@@ -203,7 +206,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     "let php_sql_query = 1
     let php_alt_blocks = 0
-    au FileType php imap .. ->
+    au FileType php imap ,, ->
     "let php_strict_blocks = 0
 
     """"""""""""""""""""""""""""""
@@ -282,9 +285,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " autocomplpop
     """"""""""""""""""""""""""""""
-    let g:AutoComplPop_NotEnableAtStartup = 1
-    let g:AutoComplPop_MappingDriven = 1
-    let g:AutoComplPop_IgnoreCaseOption = 1
+    let g:acp_enableAtStartup = 0
 
     if !exists('g:AutoComplPop_Behavior')
         let g:AutoComplPop_Behavior = {}
