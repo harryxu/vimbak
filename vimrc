@@ -184,7 +184,7 @@ set noswapfile
     set si
 
     "C-style indeting
-    set cindent
+    "set cindent
 
     filetype plugin indent on
 
