@@ -16,7 +16,7 @@ endif
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Get out of VI's compatible mode..
-set nocompatible
+"set nocompatible
 
 "Set to auto read when a file is changed from the outside
 set autoread
@@ -83,10 +83,10 @@ elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
     "set guifont=Monaco\ Bold\ 10
-    set guifont=Monaco\ 10
-    "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
-    "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
-    set gfw=WenQuanYi\Zen\Hei\ 11
+    "set guifont=Monaco\ 10
+    "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 12
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+    set gfw=WenQuanYi\Zen\Hei\ 12
     set linespace=2 
 elseif g:os == 'mac'
 endif
@@ -107,7 +107,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 将F2键映射为取消字符串搜索后的高亮
-map <F2> :nohlsearch<CR>
+map ,nl :nohlsearch<CR>
 
 " omni
 imap <C-L> <C-x><C-o>
@@ -117,12 +117,12 @@ imap <C-L> <C-x><C-o>
 
 
 " 打开文件即切换到文件所在目录
-function AlwaysCD()
+function CurrentCD()
     if bufname("") !~ "^ftp://"
         lcd %:p:h
     endif
 endfunction
-autocmd BufEnter * call AlwaysCD()
+autocmd BufEnter * call CurrentCD()
 
 " ctrl s 保存
 noremap <C-S>           :update<CR>
@@ -219,6 +219,16 @@ set noswapfile
     """"""""""""""""""""""""""""""
     au FileType diff colorscheme railscasts
 
+    """"""""""""""""""""""""""""""
+    " yaml,xml,html 使用2个空格作为缩进 
+    """"""""""""""""""""""""""""""
+    au FileType yaml,xml,html call Set2tab()
+    function Set2tab()
+        set ts=2
+        set sw=2
+        set sts=2
+    endfunction
+
 
 
 
@@ -243,7 +253,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " NERDTree 
     """"""""""""""""""""""""""""""
-    map <F3> :NERDTreeToggle<CR>
+    map ,nt :NERDTreeToggle<CR>
     imap <F3> <ESC>:NERDTreeToggle<CR>
     let NERDTreeIgnore = ['\~$', 
                 \ '\.pyc$', '\.exe$', '\.dll$', 
