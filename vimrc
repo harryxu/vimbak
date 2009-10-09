@@ -1,3 +1,7 @@
+"Use Vim settings, rather then Vi settings (much better!).
+"This must be first, because it changes other options as a side effect.
+set nocompatible
+
 if g:os == 'win'
     source $VIMRUNTIME/vimrc_example.vim
     source $VIMRUNTIME/mswin.vim
@@ -43,7 +47,11 @@ set go-=T
 " 搜索忽略大小写 ="
 set ignorecase
 
-set hlsearch
+set showcmd "show incomplete cmds down the bottom
+set showmode "show current mode down the bottom
+ 
+set incsearch "find the next match as we type the search
+set hlsearch "hilight searches by default
 
 set wildmenu
 
@@ -52,6 +60,10 @@ set completeopt=longest,menu
 
 "set nowrap
 
+"display tabs and trailing spaces
+set list
+set listchars=tab:⋅⋅,trail:⋅,nbsp:⋅
+"set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fileformats
