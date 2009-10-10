@@ -8,4 +8,6 @@
 /session
 
 /ftplugin/html.vim
-
+doc/tags-ja
+eclim/
+plugin/eclim.vim

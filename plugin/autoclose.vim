@@ -8,7 +8,7 @@
 " Last modified: 08/25/2008 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let s:debug = 1
+let s:debug = 0
 
 " check if script is already loaded
 if s:debug == 0 && exists("g:loaded_AutoClose")
@@ -181,7 +181,7 @@ for key in keys(s:charsToClose)
         exec "inoremap <silent> " . key . " <C-R>=<SID>SetVEAll()<CR><C-R>=<SID>InsertPair(" . open_func_arg . ")<CR><C-R>=<SID>RestoreVE()<CR>"
     endif
 endfor
-exec "inoremap <silent> <BS> <C-R>=<SID>SetVEAll()<CR><C-R>=<SID>Backspace()<CR><C-R>=<SID>RestoreVE()<CR>"
+"exec "inoremap <silent> <BS> <C-R>=<SID>SetVEAll()<CR><C-R>=<SID>Backspace()<CR><C-R>=<SID>RestoreVE()<CR>"
 
 " Define convenient commands
 command! AutoCloseOn :let s:running = 1

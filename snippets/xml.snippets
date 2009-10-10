@@ -1,0 +1,14 @@
+snippet xliff
+	<?xml version="1.0" ?>
+	<xliff version="1.0">
+	  <file original="global" source-language="en_US" datatype="plaintext">
+		<body>
+			${1}
+		</body>
+	  </file>
+	</xliff>
+snippet trans
+	<trans-unit id="${1}">
+	  <source>${2}</source>
+	  <target>${3}</target>
+	</trans-unit>
