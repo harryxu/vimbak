@@ -62,7 +62,7 @@ set completeopt=longest,menu
 
 "display tabs and trailing spaces
 set list
-set listchars=tab:⋅⋅,trail:⋅,nbsp:⋅
+set listchars=tab:^.,trail:.,nbsp:.
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
