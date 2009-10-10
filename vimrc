@@ -1,6 +1,6 @@
 if g:os == 'win'
     source $VIMRUNTIME/vimrc_example.vim
-    source $VIMRUNTIME/../vimfiles/mswin.vim
+    "source $VIMRUNTIME/../vimfiles/mswin.vim
     behave mswin
 elseif g:os == 'lnx'
     runtime! debian.vim
