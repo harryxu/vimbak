@@ -107,7 +107,7 @@ hi def link asStatement       Statement
 hi def link asIdentifier      Identifier
 hi def link asConstant        Constant
 hi def link asOperator        Operator
-hi def link asBraces          Function
+"hi def link asBraces          Function
 hi def link asMetadataTag     PreProc
 
 

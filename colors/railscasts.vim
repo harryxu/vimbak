@@ -62,20 +62,20 @@ hi Function                  guifg=#FFC66D ctermfg=221 gui=NONE cterm=NONE
 hi Identifier                guifg=#6D9CBE ctermfg=73 gui=NONE cterm=NONE
 hi Include                   guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
 hi PreCondit                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
-hi Keyword                   guifg=#CC7833 ctermfg=173 gui=NONE
+hi Keyword                   guifg=#AD652A ctermfg=173 gui=NONE
 hi LineNr                    guifg=#888888 guibg=#222222 ctermfg=159
 hi Number                    guifg=#EDEF81 ctermfg=107 gui=NONE
 hi PreProc                   guifg=#CC7833 ctermfg=103 gui=NONE
 hi Search                    guifg=NONE ctermfg=NONE guibg=darkBlue ctermbg=235 gui=italic cterm=underline
 hi Statement                 guifg=#CC7833 ctermfg=173 gui=NONE cterm=NONE
-hi String                    guifg=#A5C261 ctermfg=107 gui=NONE
+hi String                    guifg=#8F9D6A ctermfg=107 gui=NONE
 hi Title                     guifg=#FFFFFF ctermfg=15 gui=NONE
 hi Type                      guifg=#9EF3A0 ctermfg=167 gui=NONE cterm=NONE
 hi Visual                    guibg=#01005F ctermbg=60 gui=NONE
 
 hi DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
 hi DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
-hi Special                   guifg=#DA4939 ctermfg=167 gui=NONE
+hi Special                   guifg=#888888 ctermfg=167 gui=NONE
 hi SpecialKey                guifg=#666666
 
 hi pythonBuiltin             guifg=#6D9CBE ctermfg=73 gui=NONE cterm=NONE

@@ -61,8 +61,8 @@ set completeopt=longest,menu
 "set nowrap
 
 "display tabs and trailing spaces
-set list
-set listchars=tab:^.,trail:.,nbsp:.
+"set list
+"set listchars=tab:^.,trail:.,nbsp:.
 "set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -94,11 +94,11 @@ if g:os == 'win'
 elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
-    "set guifont=Monaco\ Bold\ 10
+    set guifont=Monaco\ Bold\ 10
     "set guifont=Monaco\ 10
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 12
-    set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
-    set gfw=WenQuanYi\Zen\Hei\ 12
+    "set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+    set gfw=WenQuanYi\Zen\Hei\ 11
     set linespace=2 
 elseif g:os == 'mac'
 endif
