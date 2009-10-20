@@ -54,9 +54,9 @@ set incsearch "find the next match as we type the search
 set hlsearch "hilight searches by default
 
 set wildmenu
-
-
 set completeopt=longest,menu
+
+set sessionoptions-=options
 
 "set nowrap
 
@@ -94,10 +94,10 @@ if g:os == 'win'
 elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
-    set guifont=Monaco\ Bold\ 10
+    "set guifont=Monaco\ Bold\ 11
     "set guifont=Monaco\ 10
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 12
-    "set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
     set gfw=WenQuanYi\Zen\Hei\ 11
     set linespace=2 
 elseif g:os == 'mac'
@@ -129,12 +129,7 @@ imap <C-L> <C-x><C-o>
 
 
 " 打开文件即切换到文件所在目录
-function CurrentCD()
-    if bufname("") !~ "^ftp://"
-        lcd %:p:h
-    endif
-endfunction
-autocmd BufEnter * call CurrentCD()
+set autochdir
 
 " ctrl s 保存
 noremap <C-S>           :update<CR>
