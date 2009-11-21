@@ -23,7 +23,7 @@ endif
 "set nocompatible
 
 "Set to auto read when a file is changed from the outside
-set autoread
+"set autoread
 
 "Have the mouse enabled all the time:
 set mouse=a
@@ -98,21 +98,23 @@ elseif g:os == 'lnx'
     "set guifont=Monaco\ 10
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 12
     set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
-    set gfw=WenQuanYi\Zen\Hei\ 11
+    set gfw=WenQuanYi\Micro\Hei\ 11
+    "set gfw=WenQuanYi\Zen\Hei\ 11
     set linespace=2 
 elseif g:os == 'mac'
 endif
 
-" 配色方案
-colorscheme railscasts
-
-if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-    colorscheme railscasts
-endif
-
 " 打开代码高亮
 :syntax enable
+
+" 配色方案
+if (has('gui_running'))
+    colorscheme railscasts
+else
+    colorscheme darkblue
+endif
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing mappings etc.
