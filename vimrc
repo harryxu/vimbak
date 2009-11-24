@@ -204,6 +204,13 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " HTML related
     """"""""""""""""""""""""""""""
+    if has('win32')
+        autocmd FileType html,php source $VIMRUNTIME/../vimfiles/scripts/sparkup.vim
+    else
+        autocmd FileType html,php source .vim/scripts/sparkup.vim
+    endif
+
+    
 
     """"""""""""""""""""""""""""""
     " Python 
