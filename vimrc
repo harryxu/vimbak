@@ -204,13 +204,6 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " HTML related
     """"""""""""""""""""""""""""""
-    if has('win32')
-        autocmd FileType html,php source $VIMRUNTIME/../vimfiles/scripts/sparkup.vim
-    else
-        autocmd FileType html,php source .vim/scripts/sparkup.vim
-    endif
-
-    
 
     """"""""""""""""""""""""""""""
     " Python 
@@ -296,7 +289,7 @@ set noswapfile
     " xmledit
     """"""""""""""""""""""""""""""
     " jump to the beginning or end of the tag block 
-    au FileType xml,html,xhtml nmap <C-I> <LocalLeader>%
+    au FileType xml,html,xhtml nmap <C-M> <LocalLeader>%
 
     """"""""""""""""""""""""""""""
     " miniBufExpl
