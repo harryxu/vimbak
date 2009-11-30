@@ -19,8 +19,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Get out of VI's compatible mode..
-"set nocompatible
 
 "Set to auto read when a file is changed from the outside
 "set autoread
@@ -60,10 +58,42 @@ set sessionoptions-=options
 
 "set nowrap
 
-"display tabs and trailing spaces
-"set list
-"set listchars=tab:^.,trail:.,nbsp:.
-"set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+"statusline setup
+set statusline=%f "tail of the filename
+ 
+"display a warning if fileformat isnt unix
+set statusline+=\ [%{&ff}]
+ 
+"display file encoding
+set statusline+=[%{&fenc}]
+ 
+set statusline+=%h "help file flag
+set statusline+=%y "filetype
+set statusline+=%r "read only flag
+set statusline+=%m "modified flag
+ 
+"display a warning if &paste is set
+set statusline+=%#error#
+set statusline+=%{&paste?'[paste]':''}
+set statusline+=%*
+ 
+set statusline+=%= "left/right separator
+set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
+set statusline+=%c, "cursor column
+set statusline+=\ %l/%L "cursor line/total lines
+set statusline+=\ %P "percent through file
+set laststatus=2
+
+"return the syntax highlight group under the cursor ''
+function! StatuslineCurrentHighlight()
+    let name = synIDattr(synID(line('.'),col('.'),1),'name')
+    if name == ''
+        return ''
+    else
+        return '[' . name . ']'
+    endif
+endfunction
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fileformats
