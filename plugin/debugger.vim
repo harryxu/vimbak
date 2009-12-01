@@ -128,9 +128,9 @@ else
 endif
 
 map <F1> :python debugger_resize()<cr>
-map <F2> :python debugger_command('step_into')<cr>
-map <F3> :python debugger_command('step_over')<cr>
-map <F4> :python debugger_command('step_out')<cr>
+"map <F2> :python debugger_command('step_into')<cr>
+"map <F3> :python debugger_command('step_over')<cr>
+"map <F4> :python debugger_command('step_out')<cr>
 
 map <Leader>dr :python debugger_resize()<cr>
 map <Leader>di :python debugger_command('step_into')<cr>

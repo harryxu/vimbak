@@ -36,7 +36,7 @@ set nu
 set cursorline
 
 " 隐藏菜单栏和工具栏
-set go-=m
+"set go-=m
 set go-=T
 
 " 横向滚动条
@@ -151,7 +151,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 将F2键映射为取消字符串搜索后的高亮
-map ,nl :nohlsearch<CR>
+map <F2> :nohlsearch<CR>
 
 " omni
 imap <C-L> <C-x><C-o>
@@ -292,8 +292,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " NERDTree 
     """"""""""""""""""""""""""""""
-    map ,nt :NERDTreeToggle<CR>
-    imap <F3> <ESC>:NERDTreeToggle<CR>
+    map <F3> <ESC>:NERDTreeToggle<CR>
     let NERDTreeIgnore = ['\~$', 
                 \ '\.pyc$', '\.exe$', '\.dll$', 
                 \ '\.jpg$', '\.png$', '\.gif$']

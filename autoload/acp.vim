@@ -122,20 +122,28 @@ endfunction
 
 "
 function acp#meetsForPythonOmni(context)
-  return has('python') &&
+  return has('python') && g:acp_behaviorPythonOmniLength >= 0 &&
         \ a:context =~ '\k\.\k\{' . g:acp_behaviorPythonOmniLength . ',}$'
 endfunction
 
 "
+function acp#meetsForPerlOmni(context)
+  return g:acp_behaviorPerlOmniLength >= 0 &&
+        \ a:context =~ '\w->\k\{' . g:acp_behaviorPerlOmniLength . ',}$'
+endfunction
+
+"
 function acp#meetsForXmlOmni(context)
-  return a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .
-        \             g:acp_behaviorXmlOmniLength . ',}$'
+  return g:acp_behaviorXmlOmniLength >= 0 &&
+        \ a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .
+        \              g:acp_behaviorXmlOmniLength . ',}$'
 endfunction
 
 "
 function acp#meetsForHtmlOmni(context)
-  return a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .
-        \             g:acp_behaviorHtmlOmniLength . ',}$'
+  return g:acp_behaviorHtmlOmniLength >= 0 &&
+        \ a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .
+        \              g:acp_behaviorHtmlOmniLength . ',}$'
 endfunction
 
 "
@@ -156,21 +164,20 @@ endfunction
 "
 function acp#completeSnipmate(findstart, base)
   if a:findstart
-    return len(matchstr(s:getCurrentText(), '.*\U'))
+    let s:posSnipmateCompletion = len(matchstr(s:getCurrentText(), '.*\U'))
+    return s:posSnipmateCompletion
   endif
   let lenBase = len(a:base)
   let items = filter(GetSnipsInCurrentScope(),
         \            'strpart(v:key, 0, lenBase) ==? a:base')
-  return map(items(items), 's:makeSnipmateItem(v:val[0], v:val[1])')
+  return map(sort(items(items)), 's:makeSnipmateItem(v:val[0], v:val[1])')
 endfunction
 
 "
 function acp#onPopupCloseSnipmate()
-  let text = s:getCurrentText()
-  let lenText = len(text)
+  let word = s:getCurrentText()[s:posSnipmateCompletion :]
   for trigger in keys(GetSnipsInCurrentScope())
-    let lenTrigger = len(trigger)
-    if lenText >= lenTrigger && strridx(text, trigger) + lenTrigger == lenText
+    if word ==# trigger
       call feedkeys("\<C-r>=TriggerSnippet()\<CR>", "n")
       return 0
     endif
