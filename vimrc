@@ -52,7 +52,7 @@ set incsearch "find the next match as we type the search
 set hlsearch "hilight searches by default
 
 set wildmenu
-set completeopt=longest,menu
+set completeopt=menuone,longest
 
 set sessionoptions-=options
 
@@ -93,6 +93,8 @@ function! StatuslineCurrentHighlight()
         return '[' . name . ']'
     endif
 endfunction
+
+set nofoldenable
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
