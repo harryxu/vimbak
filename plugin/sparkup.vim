@@ -5,7 +5,7 @@
 autocmd FileType html,php call KeyMapping()
 
 function! KeyMapping()
-    map <C-k> <Esc>:.!sparkup<Cr>:call SparkupNext()<Cr>
+    "map <C-k> <Esc>:.!sparkup<Cr>:call SparkupNext()<Cr>
     imap <C-k> <Esc>:.!sparkup<Cr>:call SparkupNext()<Cr>
     "map <C-n> <Esc>:call SparkupNext()<Cr>
     "imap <C-n> <Esc>:call SparkupNext()<Cr>
