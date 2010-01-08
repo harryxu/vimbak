@@ -121,7 +121,7 @@ if g:os == 'win'
     " 代码字体和大小 
     "set guifont=YaHei_Consolas_Hybrid:h10.5
     "set guifont=Bitstream_Vera_Sans_Mono:h11
-    set guifont=Consolas:h11
+    set guifont=Inconsolata:h12
     set linespace=1 
 elseif g:os == 'lnx'
     "set guifont=Consolas\ Bold\ 13
