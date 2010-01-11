@@ -7,3 +7,6 @@ au BufNewFile,BufRead *.as set filetype=actionscript
 au BufRead,BufNewFile *.json set filetype=json 
 
 au BufRead,BufNewFile *.hx set filetype=haxe 
+
+" named file
+au BufRead,BufNewFile /etc/bind/named.conf* set filetype=named
