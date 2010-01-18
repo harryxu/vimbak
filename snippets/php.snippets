@@ -166,7 +166,8 @@ snippet wh
 	}
 # do ... while
 snippet do
-	do {
+	do 
+	{
 		${2:// code... }
 	} while (${1:/* condition */});
 snippet if
@@ -175,32 +176,38 @@ snippet if
 		${2:// code...}
 	}
 snippet ife
-	if (${1:/* condition */}) {
+	if (${1:/* condition */}) 
+	{
 		${2:// code...}
-	} else {
+	} 
+	else 
+	{
 		${3:// code...}
 	}
 	${4}
 snippet else
-	else {
+	else 
+	{
 		${1:// code...}
 	}
 snippet elseif
-	elseif (${1:/* condition */}) {
+	elseif (${1:/* condition */}) 
+	{
 		${2:// code...}
 	}
 # Tertiary conditional
 snippet t
 	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
 snippet switch
-	switch ($${1:variable}) {
-		case '${2:value}':
-			${3:// code...}
-			break;
-		${5}
-		default:
-			${4:// code...}
-			break;
+	switch ($${1:variable}) 
+	{
+	case '${2:value}':
+		${3:// code...}
+		break;
+	${5}
+	default:
+		${4:// code...}
+		break;
 	}
 snippet case
 	case '${1:value}':
@@ -232,6 +239,8 @@ snippet kv
 # array item. String value
 snippet kvs
 	'${1:key}' => '${2:value}',
-
 snippet var
 	$${1:var} = ${2:value};
+# var_dump
+snippet vd
+	var_dump(${1});${2}
