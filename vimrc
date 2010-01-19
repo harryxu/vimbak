@@ -346,20 +346,30 @@ set noswapfile
         let g:AutoComplPop_Behavior = {}
     endif
 
-    " php
-    "let g:AutoComplPop_Behavior['php'] = []
-    "call add(g:AutoComplPop_Behavior['php'], {
-                "\   'command'   : "\<C-x>\<C-o>",
-                "\   'pattern'   : printf('\(->\|::\|\$\)\k\{%d,}$', 0),
-                "\   'repeat'    : 0,
-                "\})
+    """"""""""""""""""""""""""""""
+    " => bufExplorer plugin
+    """"""""""""""""""""""""""""""
+    let g:bufExplorerDefaultHelp=0
+    let g:bufExplorerShowRelativePath=1
 
-    " javascript
-    let g:AutoComplPop_Behavior['javascript'] = []
-    call add(g:AutoComplPop_Behavior['javascript'], {
-                \   'command'   : "\<C-x>\<C-o>",
-                \   'pattern'   : printf('\.\k\{%d,}$', 0),
-                \   'repeat'    : 0,
-                \})
+
+    """"""""""""""""""""""""""""""
+    " => Minibuffer plugin
+    """"""""""""""""""""""""""""""
+    let g:miniBufExplModSelTarget = 1
+    let g:miniBufExplorerMoreThanOne = 2
+    let g:miniBufExplModSelTarget = 0
+    "let g:miniBufExplUseSingleClick = 1
+    let g:miniBufExplMapWindowNavVim = 1
+    let g:miniBufExplVSplit = 25
+    let g:miniBufExplSplitBelow=1
+
+    let g:bufExplorerSortBy = "name"
+
+    autocmd BufRead,BufNew :call UMiniBufExplorer
+
+    map <F5> :TMiniBufExplorer<CR>
+        
+
  
 
