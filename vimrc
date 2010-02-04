@@ -245,7 +245,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " Python 
     """"""""""""""""""""""""""""""
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    "autocmd FileType python set omnifunc=pythoncomplete#Complete
 
     """"""""""""""""""""""""""""""
     " PHP 
