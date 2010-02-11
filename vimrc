@@ -369,6 +369,11 @@ set noswapfile
     autocmd BufRead,BufNew :call UMiniBufExplorer
 
     map <F5> :TMiniBufExplorer<CR>
+
+    """"""""""""""""""""""""""""""
+    " => Google Suggest
+    """"""""""""""""""""""""""""""
+    let g:googlesuggest_language = ''
         
 
  
