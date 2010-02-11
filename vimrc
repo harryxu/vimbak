@@ -198,6 +198,10 @@ map <A-l> <C-W>L
 nmap <C-j> <C-E>
 nmap <C-k> <C-Y>
 
+" map ctrl j to esc
+imap <C-j> <ESC>
+vmap <C-j> <ESC>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files and backups
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -245,7 +249,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " Python 
     """"""""""""""""""""""""""""""
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    "autocmd FileType python set omnifunc=pythoncomplete#Complete
 
     """"""""""""""""""""""""""""""
     " PHP 
