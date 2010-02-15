@@ -360,17 +360,17 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " => Minibuffer plugin
     """"""""""""""""""""""""""""""
-    let g:miniBufExplModSelTarget = 1
-    let g:miniBufExplorerMoreThanOne = 2
     let g:miniBufExplModSelTarget = 0
     "let g:miniBufExplUseSingleClick = 1
     let g:miniBufExplMapWindowNavVim = 1
     let g:miniBufExplVSplit = 25
     let g:miniBufExplSplitBelow=1
+    let g:miniBufExplorerAutoUpdate = 0
+
 
     let g:bufExplorerSortBy = "name"
 
-    autocmd BufRead,BufNew :call UMiniBufExplorer
+    "autocmd BufRead,BufNew :call UMiniBufExplorer
 
     map <F5> :TMiniBufExplorer<CR>
 
