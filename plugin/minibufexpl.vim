@@ -600,7 +600,7 @@ let s:debugIndex = 0
 augroup MiniBufExplorer
 autocmd MiniBufExplorer BufDelete   * call <SID>DEBUG('-=> BufDelete AutoCmd', 10) |call <SID>AutoUpdate(expand('<abuf>'))
 autocmd MiniBufExplorer BufEnter    * call <SID>DEBUG('-=> BufEnter  AutoCmd', 10) |call <SID>AutoUpdate(-1)
-autocmd MiniBufExplorer VimEnter    * call <SID>DEBUG('-=> VimEnter  AutoCmd', 10) |let g:miniBufExplorerAutoUpdate = 1 |call <SID>AutoUpdate(-1)
+"autocmd MiniBufExplorer VimEnter    * call <SID>DEBUG('-=> VimEnter  AutoCmd', 10) |let g:miniBufExplorerAutoUpdate = 1 |call <SID>AutoUpdate(-1)
 " }}}
 
 " Functions
@@ -1214,7 +1214,7 @@ function! <SID>AutoUpdate(delBufNum)
     call <SID>DEBUG('===========================',10)
     return
   else
-    let g:miniBufExplInAutoUpdate = 1
+    "let g:miniBufExplInAutoUpdate = 1
   endif
 
   " Don't bother autoupdating the MBE window
