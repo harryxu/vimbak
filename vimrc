@@ -33,7 +33,10 @@ set mouse=a
 " 显示行号 
 set nu
 
-set cursorline
+"set cursorline
+set list
+set listchars=eol:¬
+
 
 " 隐藏菜单栏和工具栏
 "set go-=m
@@ -182,7 +185,7 @@ vmap <S-Insert>         <C-V>
 vnoremap <C-C> "+y
 
 " move on windows
-map <C-K> <C-W>k
+map <C-I> <C-W>k
 map <C-J> <C-W>j
 map <C-H> <C-W>h
 map <C-L> <C-W>l

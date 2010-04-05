@@ -79,7 +79,9 @@ hi Visual                    guibg=#01005F ctermbg=60 gui=NONE
 hi DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
 hi DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
 hi Special                   guifg=#888888 ctermfg=167 gui=NONE
-hi SpecialKey                guifg=#666666
+hi NonText guifg=#2F2F3F
+hi SpecialKey guifg=#2F2F3F
+"hi SpecialKey                guifg=#666666
 
 hi pythonBuiltin             guifg=#6D9CBE ctermfg=73 gui=NONE cterm=NONE
 hi rubyBlockParameter        guifg=#FFFFFF ctermfg=15
