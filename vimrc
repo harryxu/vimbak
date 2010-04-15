@@ -2,18 +2,16 @@
 "This must be first, because it changes other options as a side effect.
 set nocompatible
 
-if g:os == 'win'
+if has('Win32')
     source $VIMRUNTIME/vimrc_example.vim
     "source $VIMRUNTIME/../vimfiles/mswin.vim
     behave mswin
-elseif g:os == 'lnx'
+else
     runtime! debian.vim
     source $VIMRUNTIME/vimrc_example.vim
-    "source $VIMRUNTIME/mswin.vim
     if filereadable("/etc/vim/gvimrc.local")
         source /etc/vim/gvimrc.local
     endif
-elseif g:os == 'mac'
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,8 +32,11 @@ set mouse=a
 set nu
 
 "set cursorline
-set list
-set listchars=eol:¬
+
+if !has('Win32')
+    set list
+    set listchars=eol:¬
+endif
 
 
 " 隐藏菜单栏和工具栏
@@ -109,24 +110,23 @@ set nofoldenable
 "set fileencodings=utf-8,gb18030,utf-16,gb2312,big5
 set encoding=utf-8
 set fileencodings=utf-8,ucs-bom,gbk,gb2312,gb18030,default,latin1
-if g:os == 'win'
-    language messages zh_CN.UTF-8
+let $LANG = 'en'
+if has('Win32')
     source $VIMRUNTIME/delmenu.vim
-    set langmenu=zh_CN.UTF-8
-    source $VIMRUNTIME/menu.vim
+    "language messages en
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if g:os == 'win'
+if has('Win32')
     " 代码字体和大小 
     "set guifont=YaHei_Consolas_Hybrid:h10.5
     "set guifont=Bitstream_Vera_Sans_Mono:h11
     set guifont=Inconsolata:h12
     set linespace=1 
-elseif g:os == 'lnx'
+else
     "set guifont=Consolas\ Bold\ 13
     "set guifont=Consolas\ 13
     "set guifont=Monaco\ Bold\ 11
@@ -137,14 +137,15 @@ elseif g:os == 'lnx'
     set gfw=WenQuanYi\Micro\Hei\ 12
     "set gfw=WenQuanYi\Zen\Hei\ 11
     set linespace=2 
-elseif g:os == 'mac'
 endif
 
 " 打开代码高亮
 :syntax enable
 
 " 配色方案
-if (has('gui_running'))
+if (has('Win32'))
+    colorscheme github
+elseif (has('gui_running'))
     colorscheme railscasts
 else
     colorscheme darkblue
@@ -196,10 +197,6 @@ map <A-k> <C-W>K
 map <A-j> <C-W>J
 map <A-h> <C-W>H
 map <A-l> <C-W>L
-
-" 滚屏
-nmap <C-j> <C-E>
-nmap <C-k> <C-Y>
 
 " map ctrl j to esc
 imap <C-j> <ESC>
@@ -298,10 +295,6 @@ set noswapfile
 
     " ctags
     set tags=tags;/
-    if g:os == 'win'
-    elseif g:os == 'lnx'
-        set tags+=~/.vim/tags/codeIgniter.ctags
-    endif
 
     """"""""""""""""""""""""""""""
     " NERDTree 
@@ -315,9 +308,6 @@ set noswapfile
     " snipMate 
     """"""""""""""""""""""""""""""
     " fix snippets_dir on windows
-    if g:os == 'win'
-        let snippets_dir = $VIMRUNTIME.'\..\vimfiles\snippets\'
-    endif
 
     au BufRead *.snippets :set nofoldenable
 
