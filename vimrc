@@ -272,14 +272,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " yaml,xml,html 使用2个空格作为缩进 
     """"""""""""""""""""""""""""""
-    au FileType yaml,xml,html call Set2tab()
-    function Set2tab()
-        set ts=2
-        set sw=2
-        set sts=2
-    endfunction
-
-
+    autocmd FileType html,css,xml,yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
