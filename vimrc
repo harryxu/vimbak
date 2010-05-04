@@ -62,7 +62,7 @@ set sessionoptions-=options
 
 "set nowrap
 " wrapping text
-set wrap linebreak nolist
+set wrap linebreak
 
 "statusline setup
 set statusline=%f "tail of the filename
@@ -296,7 +296,8 @@ set noswapfile
     map <F3> <ESC>:NERDTreeToggle<CR>
     let NERDTreeIgnore = ['\~$', 
                 \ '\.pyc$', '\.exe$', '\.dll$', 
-                \ '\.jpg$', '\.png$', '\.gif$']
+                \ '\.jpg$', '\.png$', '\.gif$',
+                \ '\.swf$', '\.fla$', '\.o$']
 
     """"""""""""""""""""""""""""""
     " snipMate 
@@ -369,6 +370,9 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " => Zen Coding
     """"""""""""""""""""""""""""""
+    let g:user_zen_settings = {
+    \    'indentation' : '  ',
+    \}
     let g:user_zen_expandabbr_key = '<c-k>'
     let g:use_zen_complete_tag = 1
 
