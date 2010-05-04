@@ -163,7 +163,7 @@ endif
 map <F2> :nohlsearch<CR>
 
 " omni
-imap <C-L> <C-x><C-o>
+"imap <C-L> <C-x><C-o>
 
 " 插入当前时间
 :imap <C-D> <c-r>=strftime("<%Y-%m-%d %a %H:%M:%S>") . " harry"<CR>
@@ -376,5 +376,10 @@ set noswapfile
     let g:user_zen_expandabbr_key = '<c-k>'
     let g:use_zen_complete_tag = 1
 
- 
-
+    """"""""""""""""""""""""""""""
+    " => NeoComplCache
+    """"""""""""""""""""""""""""""
+    " Use neocomplcache. 
+    let g:NeoComplCache_EnableAtStartup = 1 
+    " Use smartcase. 
+    let g:NeoComplCache_SmartCase = 1 
