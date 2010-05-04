@@ -131,13 +131,13 @@ fun! TriggerSnippet()
 		endif
 	endif
 
-	if pumvisible() " Update snippet if completion is used, or deal with supertab
-		if exists('SuperTabKey')
-			call feedkeys(SuperTabKey) | return ''
-		endif
-		call feedkeys("\<esc>a", 'n') " Close completion menu
-		call feedkeys("\<tab>") | return ''
-	endif
+	"if pumvisible() " Update snippet if completion is used, or deal with supertab
+		"if exists('SuperTabKey')
+			"call feedkeys(SuperTabKey) | return ''
+		"endif
+		"call feedkeys("\<esc>a", 'n') " Close completion menu
+		"call feedkeys("\<tab>") | return ''
+	"endif
 
 	if exists('g:snipPos') | return snipMate#jumpTabStop(0) | endif
 

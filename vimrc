@@ -363,9 +363,9 @@ set noswapfile
     map <F5> :TMiniBufExplorer<CR>
 
     """"""""""""""""""""""""""""""
-    " => Google Suggest
+    " => SuperTab
     """"""""""""""""""""""""""""""
-    let g:googlesuggest_language = ''
+    "let g:SuperTabMappingForward = '<C-J>'
         
     """"""""""""""""""""""""""""""
     " => Zen Coding
@@ -373,8 +373,8 @@ set noswapfile
     let g:user_zen_settings = {
     \    'indentation' : '  ',
     \}
-    let g:user_zen_expandabbr_key = '<c-k>'
-    let g:use_zen_complete_tag = 1
+    let g:user_zen_expandabbr_key = '<C-K>'
+    "let g:use_zen_complete_tag = 1
 
     """"""""""""""""""""""""""""""
     " => NeoComplCache
@@ -383,3 +383,4 @@ set noswapfile
     let g:NeoComplCache_EnableAtStartup = 1 
     " Use smartcase. 
     let g:NeoComplCache_SmartCase = 1 
+    "let g:NeoComplCache_DisableAutoComplete = 1
