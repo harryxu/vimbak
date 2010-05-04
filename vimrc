@@ -61,6 +61,8 @@ set completeopt=menuone,longest
 set sessionoptions-=options
 
 "set nowrap
+" wrapping text
+set wrap linebreak nolist
 
 "statusline setup
 set statusline=%f "tail of the filename
@@ -109,11 +111,11 @@ set nofoldenable
 "set fileencoding=utf-8
 "set fileencodings=utf-8,gb18030,utf-16,gb2312,big5
 set encoding=utf-8
-set fileencodings=utf-8,ucs-bom,gbk,gb2312,gb18030,default,latin1
-let $LANG = 'en'
+set fileencodings=utf-8,ucs-bom,gbk,gb2312,gb18030,cp936,default,latin1
 if has('Win32')
     source $VIMRUNTIME/delmenu.vim
-    "language messages en
+    source $VIMRUNTIME/menu.vim
+    language messages zh_CN.UTF-8
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -262,7 +264,6 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " XML 
     """"""""""""""""""""""""""""""
-    au BufRead *.xml set wrap
 
     """"""""""""""""""""""""""""""
     " diff 
