@@ -2,7 +2,8 @@
 au BufRead,BufNewFile todo.txt,*.todo.txt,recur.txt,*.todo set filetype=todo
 
 " ActionScript
-au BufNewFile,BufRead *.as set filetype=actionscript
+au BufNewFile,BufRead *.mxml    		setfiletype mxml
+au BufNewFile,BufRead *.as          	setfiletype actionscript
 
 au BufRead,BufNewFile *.json set filetype=json 
 
