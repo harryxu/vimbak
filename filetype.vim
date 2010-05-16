@@ -13,6 +13,6 @@ au BufRead,BufNewFile *.hx set filetype=haxe
 au BufRead,BufNewFile /etc/bind/named.conf* set filetype=named
 
 " nginx config file
-au BufRead,BufNewFile /etc/nginx/conf.d/*,
-            \/etc/nginx/*.conf,
-            \/etc/nginx/sites-*/* set filetype=nginx 
+au BufRead,BufNewFile *nginx/conf.d/*,
+            \*nginx/*.conf,
+            \*nginx/sites-*/* set filetype=nginx 
