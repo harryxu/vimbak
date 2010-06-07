@@ -1,7 +1,7 @@
 "=============================================================================
 " FILE: include_complete.vim
 " AUTHOR:  Shougo Matsushita <Shougo.Matsu@gmail.com>
-" Last Modified: 15 Apr 2010
+" Last Modified: 26 May 2010
 " License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
 "     a copy of this software and associated documentation files (the
@@ -103,7 +103,7 @@ function! neocomplcache#plugin#include_complete#get_keyword_list(cur_keyword_str
     if len(l:cur_keyword_str) < s:completion_length ||
                 \neocomplcache#check_match_filter(l:cur_keyword_str, s:completion_length)
         for l:include in s:include_info[bufnr('%')].include_files
-            if !buflisted(l:include)
+            if !bufloaded(l:include)
                 let l:keyword_list += neocomplcache#unpack_dictionary(s:include_cache[l:include])
             endif
         endfor
@@ -112,7 +112,7 @@ function! neocomplcache#plugin#include_complete#get_keyword_list(cur_keyword_str
     else
         let l:key = tolower(l:cur_keyword_str[: s:completion_length-1])
         for l:include in s:include_info[bufnr('%')].include_files
-            if !buflisted(l:include) && has_key(s:include_cache[l:include], l:key)
+            if !bufloaded(l:include) && has_key(s:include_cache[l:include], l:key)
                 let l:keyword_list += s:include_cache[l:include][l:key]
             endif
         endfor
@@ -138,7 +138,7 @@ function! s:check_buffer_all()"{{{
 
     " Check buffer.
     while l:bufnumber <= bufnr('$')
-        if buflisted(l:bufnumber) && !has_key(s:include_info, l:bufnumber)
+        if bufloaded(l:bufnumber) && !has_key(s:include_info, l:bufnumber)
             call s:check_buffer(bufname(l:bufnumber))
         endif
 
@@ -197,7 +197,13 @@ function! s:get_buffer_include_files(bufnumber)"{{{
         let l:suffixes = &l:suffixesadd
     endif
 
+    " Change current directory.
+    let l:cwd_save = getcwd()
+    lcd `=fnamemodify(bufname(a:bufnumber), ':p:h')`
+
     let l:include_files = s:get_include_files(0, getbufline(a:bufnumber, 1, 100), l:filetype, l:pattern, l:path, l:expr)
+
+    lcd `=l:cwd_save`
     
     " Restore option.
     if has_key(g:NeoComplCache_IncludeSuffixes, l:filetype)
