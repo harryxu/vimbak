@@ -16,3 +16,5 @@ au BufRead,BufNewFile /etc/bind/named.conf* set filetype=named
 au BufRead,BufNewFile /etc/nginx/conf.d/*,
             \/etc/nginx/*.conf,
             \/etc/nginx/sites-*/* set filetype=nginx 
+
+au BufNewFile,BufRead *.log set filetype=log

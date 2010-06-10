@@ -146,7 +146,7 @@ endif
 
 " 配色方案
 if (has('Win32'))
-    colorscheme github
+    colorscheme fu
 elseif (has('gui_running'))
     colorscheme railscasts
 else
