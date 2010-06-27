@@ -380,7 +380,7 @@ set noswapfile
     " => NeoComplCache
     """"""""""""""""""""""""""""""
     " Use neocomplcache. 
-    let g:NeoComplCache_EnableAtStartup = 1 
+    let g:neocomplcache_enable_at_startup = 1 
     " Use smartcase. 
     let g:NeoComplCache_SmartCase = 1 
     "let g:NeoComplCache_DisableAutoComplete = 1
