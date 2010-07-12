@@ -124,11 +124,11 @@ snippet head
 snippet title
 	<title>${1:`substitute(Filename("", "Page Title"), "^.", "\u&", "")`}</title>${2}
 snippet script
-	<script type="text/javascript" charset="utf-8">
+	<script type="text/javascript">
 		${1}
 	</script>${2}
 snippet scriptsrc
-	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
+	<script src="${1}" type="text/javascript"></script>${2}
 snippet style
 	<style type="text/css" media="${1:screen}">
 		${2}
@@ -199,7 +199,7 @@ snippet textarea
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
 # include jquery from google ajax library
 snippet jquery
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 # document onload by jquery
 snippet jload
 	$(function(){
