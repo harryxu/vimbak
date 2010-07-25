@@ -135,7 +135,8 @@ else
     "set guifont=Monaco\ 10
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 12
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
-    set guifont=Inconsolata\ 15
+    "set guifont=Inconsolata\ 15
+    set guifont=Anonymous\ Pro\ Bold\ 14
     set gfw=WenQuanYi\Micro\Hei\ 12
     "set gfw=WenQuanYi\Zen\Hei\ 11
     set linespace=2 
@@ -384,3 +385,9 @@ set noswapfile
     " Use smartcase. 
     let g:NeoComplCache_SmartCase = 1 
     "let g:NeoComplCache_DisableAutoComplete = 1
+    "
+
+    """"""""""""""""""""""""""""""
+    " => Session manager
+    """"""""""""""""""""""""""""""
+    let g:session_autosave = 1
