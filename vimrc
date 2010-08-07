@@ -35,7 +35,7 @@ set nu
 
 if !has('Win32')
     set list
-    set listchars=tab:▸\ ,eol:¬
+    set listchars=tab:→\ ,eol:¬
 endif
 
 

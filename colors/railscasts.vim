@@ -54,8 +54,8 @@ hi PmenuSel                  guifg=#FFFFFF guibg=#990000
 hi PmenuSbar                 guibg=#707070 guifg=fg gui=none
 hi PmenuThumb                guibg=#d0d0d0 guifg=bg gui=none
 
-hi StatusLine                guibg=#000000 guifg=#888888 gui=bold
-hi StatusLineNC              guibg=#000000 guifg=#555555 gui=bold
+hi StatusLine                guibg=#000000 guifg=#888888 gui=none
+hi StatusLineNC              guibg=#121212 guifg=#555555 gui=none
 
 hi Comment                   guifg=#2B74AF ctermfg=180 gui=NONE
 hi Constant                  guifg=#6D9CBE ctermfg=73 gui=NONE
