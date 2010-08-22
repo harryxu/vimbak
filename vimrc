@@ -35,7 +35,7 @@ set nu
 
 if !has('Win32')
     set list
-    set listchars=tab:→\ ,eol:¬
+    set listchars=tab:·\ ,eol:¬
 endif
 
 
@@ -136,7 +136,7 @@ else
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 12
     "set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
     "set guifont=Inconsolata\ 15
-    set guifont=Anonymous\ Pro\ Bold\ 14
+    set guifont=Anonymous\ Pro\ Bold\ 12
     set gfw=WenQuanYi\Micro\Hei\ 12
     "set gfw=WenQuanYi\Zen\Hei\ 11
     set linespace=2 
@@ -310,9 +310,9 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " fuzzy finder
     """"""""""""""""""""""""""""""
-    nmap <CR> :FufBuffer<CR>
-    nmap ,<CR> :FufFile<CR>
-    nmap ,b<CR> :FufDir<CR>
+    nmap ,b :FufBuffer<CR>
+    nmap ,f :FufFile<CR>
+    nmap ,d :FufDir<CR>
     
     """"""""""""""""""""""""""""""
     " xmledit
@@ -381,10 +381,13 @@ set noswapfile
     " => NeoComplCache
     """"""""""""""""""""""""""""""
     " Use neocomplcache. 
-    let g:neocomplcache_enable_at_startup = 1 
+    let g:neocomplcache_enable_at_startup = 1
     " Use smartcase. 
-    let g:NeoComplCache_SmartCase = 1 
-    "let g:NeoComplCache_DisableAutoComplete = 1
+    let g:NeoComplCache_SmartCase = 1
+    let g:neocomplcache_enable_camel_case_completion = 1
+    let g:neocomplcache_enable_underbar_completion = 1
+
+    "let g:neocomplcache_disable_auto_complete = 1
     "
 
     """"""""""""""""""""""""""""""

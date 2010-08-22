@@ -45,7 +45,7 @@ hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
 "hi Normal                    guifg=#DED8D3 guibg=#002240 cterm=bold
-hi Normal                    guifg=#DBDBDB guibg=#1A1A1A cterm=bold
+hi Normal                    guifg=#DBDBDB guibg=#000000 cterm=bold
 hi Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15
 hi CursorLine                guibg=#000000 ctermbg=233 cterm=NONE
 
@@ -54,8 +54,8 @@ hi PmenuSel                  guifg=#FFFFFF guibg=#990000
 hi PmenuSbar                 guibg=#707070 guifg=fg gui=none
 hi PmenuThumb                guibg=#d0d0d0 guifg=bg gui=none
 
-hi StatusLine                guibg=#000000 guifg=#888888 gui=none
-hi StatusLineNC              guibg=#121212 guifg=#555555 gui=none
+hi StatusLine                guibg=#111111 guifg=#AAAAAA gui=none
+hi StatusLineNC              guibg=#222222 guifg=#555555 gui=none
 
 hi Comment                   guifg=#2B74AF ctermfg=180 gui=NONE
 hi Constant                  guifg=#6D9CBE ctermfg=73 gui=NONE

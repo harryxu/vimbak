@@ -1181,7 +1181,7 @@ syn case ignore
   " Magic Constants {{{2
     syn cluster phpClConstants add=phpMagicConstant
     syn case match
-    syn keyword	phpMagicConstant contained __LINE__ __FILE__ __FUNCTION__ __METHOD__ __CLASS__
+    syn keyword	phpMagicConstant contained __LINE__ __FILE__ __FUNCTION__ __METHOD__ __CLASS__ __NAMESPACE__
     syn case ignore
   " }}}2
 
@@ -2645,7 +2645,7 @@ hi! link phpEchoComma phpEcho
 
 syn cluster phpClExpressions add=phpPrint,phpInclude
 syn keyword phpPrint contained print
-syn keyword	phpInclude contained include require include_once require_once
+syn keyword	phpInclude contained include require include_once require_once namespace use
 
 " match when a '(type)' is used to cast the type of something
 

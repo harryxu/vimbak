@@ -1,5 +1,7 @@
 *.swp
 *.bak
+*.o
+*.so
 
 .*
 !.gitignore
@@ -9,6 +11,8 @@
 /doc/tags-ja
 /session
 /sessions
+
+/bash-support/doc
 
 /ftplugin/html.vim
 eclim/

@@ -1,4 +1,4 @@
-README for bash-support.vim (Version 2.10) / January 29 2009
+README for bash-support.vim (Version 3.2) / August 08 2010
 
   *  INSTALLATION
   *  RELEASE NOTES 
@@ -8,32 +8,48 @@ README for bash-support.vim (Version 2.10) / January 29 2009
 Bash Support implements a bash-IDE for Vim/gVim. It is written to considerably
 speed up writing code in a consistent style.  This is done by inserting
 complete statements, comments, idioms, and code snippets.  Syntax checking,
-running a script, starting a debugger  can be done with a keystroke.  There
-are many additional hints and options which can improve speed and comfort when
+running a script, starting a debugger  can be done with a keystroke.  There are
+many additional hints and options which can improve speed and comfort when
 writing shell scripts. 
  
 =======================================================================================
   INSTALLATION
 =======================================================================================
 
-The subdirectories in the zip archive  bash-support.zip  mirror the directory structure 
-which is needed below the local installation directory $HOME/.vim/ .
+The subdirectories in the zip archive  bash-support.zip  mirror the directory
+structure which is needed below the local installation directory $HOME/.vim/ .
 
 (1) Copy the zip archive  bash-support.zip to $HOME/.vim and run
 
       unzip bash-support.zip
 
-    If you have already an older version of bash-support and you have modified the
-    template files you may want to save your templates first or copy the files from the 
-    archive by hand.
+    If you have already an older version of bash-support and you have modified
+    the template files you may want to save your templates first and suppress
+    overwriting them with
 
-(2) Set at least some personal details into .vimrc by overriding some defaults.
-    Here the minimal personalization (my settings as an example, of course):
+      unzip bash-support.zip  -x *Templates *.template
 
-      let g:BASH_AuthorName   = 'Dr.-Ing. Fritz Mehner'     
-      let g:BASH_AuthorRef    = 'Mn'                         
-      let g:BASH_Email        = 'mehner@fh-swf.de'            
-      let g:BASH_Company      = 'FH Südwestfalen, Iserlohn'    
+(2) Loading of plugin files must be enabled. If not use
+      :filetype plugin on
+    This is the minimal content of the file '$HOME/.vimrc'. Create one if there
+    is none. 
+
+(3) Set at least some personal details into bash-support/templates/Templates by
+    overriding the defaults.  Here the minimal personalization (my settings as
+    an example, of course):
+
+      |AUTHOR|    = Dr. Fritz Mehner 
+      |AUTHORREF| = fgm
+      |EMAIL|     = mehner@fh-swf.de
+      |COMPANY|   = FH Südwestfalen, Iserlohn
+      |COPYRIGHT| = Copyright (c) |YEAR|, |AUTHOR|
+
+    Please read the documentation to fully understand the template system.
+
+(4) Consider additional settings in the file '$HOME/.vimrc'.
+    The files customization.vimrc and customization.gvimrc are replacements or
+    extensions for your .vimrc and .gvimrc ( _vimrc and _gvimrc under Windows).
+    You may want to use parts of them. The files are documented. 
 
 There are a lot of features and options which can be used and influenced:
 
@@ -41,6 +57,7 @@ There are a lot of features and options which can be used and influenced:
   *  using and managing personal code snippets
   *  bash dictionary for keyword completion
   *  removing the root menu
+  *  using additional plugins
 
 Restart gVim/Vim generate the help tags 
 
@@ -57,15 +74,13 @@ and look at the bashsupport help with
              | +-------------------------------------------+ |
              +-----------------------------------------------+
 
-
 =======================================================================================
-  RELEASE NOTES FOR VERSION 2.10
+  RELEASE NOTES FOR VERSION 3.2
 =======================================================================================
-- new item in the Statements-menu: 'for ((...)) do done'.
-- new item in the Statements-menu: 'printf "%s"'.
-- new item in the Statements-menu: indirect parameter expansion ${!name}
-- Bugfix: unnecessary submenu beyond 'Environ'.
-- Bugfix: shopt menu had no insert mode.
+- New hotkey and menu entry for [[ =~ ]]
+- New for Bash 4.1: shopt 'compat40', variables '$BASHOPTS', '$BASH_XTRACEFD'.
+- Bugfixes: local installation looks like a system-wide installation in seldom cases.
+- Bugfixes: typo in 4 menu entries.
 
 =======================================================================================
   OLDER RELEASE NOTES : see file 'ChangeLog'
@@ -95,12 +110,15 @@ bash-support/wordlists/*            Additional word lists (dictionaries).
                           bash-support.vim will work without them.
                           -------------------------------------------------------------
 
-bash-support/rc/costumization.vimrc   Additional settings I use in .vimrc: incremental 
+bash-support/rc/customization.bashrc  Additional settings I use in .bashrc: 
+                                      set the prompt P2, P3, P4 (for debugging).
+
+bash-support/rc/customization.vimrc   Additional settings I use in .vimrc: incremental 
                                       search, tabstop, hot keys, font, use of dictionaries, 
                                       ...  The file is commented. Append it to your .vimrc
                                       if you like.
 
-bash-support/rc/costumization.gvimrc  Additional settings I use in .gvimrc: hot keys, 
+bash-support/rc/customization.gvimrc  Additional settings I use in .gvimrc: hot keys, 
                                       mouse settings, ...  The file is commented. 
                                       Append it to your .gvimrc if you like.
 
@@ -120,8 +138,7 @@ bash-support/doc/*                    Hotkey reference card (PDF), changelog.
     pointer is back from the menu entry).
 
 (4) Use Emulate3Buttons "on" (X11) even for a 3-button mouse. Pressing left and
-    right button simultaneously without moving your fingers is faster then 
+    right button simultaneously without moving your fingers is faster then
     moving a finger to the middle button (often a wheel).
-
 
 =======================================================================================
