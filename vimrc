@@ -143,7 +143,7 @@ else
 endif
 
 " 打开代码高亮
-:syntax enable
+syntax enable
 
 " 配色方案
 if (has('Win32'))
@@ -274,7 +274,7 @@ set noswapfile
     """"""""""""""""""""""""""""""
     " yaml,xml,html 使用2个空格作为缩进 
     """"""""""""""""""""""""""""""
-    autocmd FileType html,css,xml,yaml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType html,htmldjango,css,xml,yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -384,8 +384,6 @@ set noswapfile
     let g:neocomplcache_enable_at_startup = 1
     " Use smartcase. 
     let g:NeoComplCache_SmartCase = 1
-    let g:neocomplcache_enable_camel_case_completion = 1
-    let g:neocomplcache_enable_underbar_completion = 1
 
     "let g:neocomplcache_disable_auto_complete = 1
     "

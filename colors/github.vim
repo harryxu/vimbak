@@ -36,17 +36,17 @@ hi DiffDelete      guifg=#DDCCCC guibg=#FFDDDD gui=none
 " }}}
 
 " {{{ Folding / Line Numbering / Status Lines
-hi Folded		guibg=#ECECEC guifg=#808080 gui=bold
-hi vimFold		guibg=#ECECEC guifg=#808080 gui=bold
-hi FoldColumn	guibg=#ECECEC guifg=#808080 gui=bold
+hi Folded		guibg=#ECECEC guifg=#808080 gui=none
+hi vimFold		guibg=#ECECEC guifg=#808080 gui=none
+hi FoldColumn	guibg=#ECECEC guifg=#808080 gui=none
 
-hi LineNr		guifg=#959595 guibg=#ECECEC gui=bold
+hi LineNr		guifg=#959595 guibg=#ECECEC gui=none
 hi NonText		guifg=#808080 guibg=#ECECEC
-hi Folded		guifg=#808080 guibg=#ECECEC gui=bold
-hi FoldeColumn  guifg=#808080 guibg=#ECECEC gui=bold
+hi Folded		guifg=#808080 guibg=#ECECEC gui=none
+hi FoldeColumn  guifg=#808080 guibg=#ECECEC gui=none
 
 hi VertSplit	guibg=#bbbbbb guifg=#bbbbbb gui=none
-hi StatusLine   guibg=#bbbbbb guifg=#404040 gui=bold
+hi StatusLine   guibg=#bbbbbb guifg=#404040 gui=none
 hi StatusLineNC guibg=#d4d4d4 guifg=#404040 gui=italic
 " }}}
 
@@ -73,29 +73,29 @@ hi Search		guibg=#cdcdfd guifg=#000000 gui=italic
 " {{{ Syntax groups
 hi Ignore		guifg=#808080
 hi Identifier	guifg=#0086B3
-hi PreProc		guifg=#A0A0A0 gui=bold
+hi PreProc		guifg=#A0A0A0 gui=none
 hi Comment		guifg=#999988
 hi Constant		guifg=#177F80 gui=none
 hi String		guifg=#D81745
-hi Function		guifg=#990000 gui=bold
-hi Statement	guifg=#000000 gui=bold
-hi Type			guifg=#445588 gui=bold
+hi Function		guifg=#990000 gui=none
+hi Statement	guifg=#000000 gui=none
+hi Type			guifg=#445588 gui=none
 hi Number		guifg=#1C9898
-hi Todo			guifg=#FFFFFF guibg=#990000 gui=bold
-hi Special		guifg=#159828 gui=bold
+hi Todo			guifg=#FFFFFF guibg=#990000 gui=none
+hi Special		guifg=#159828 gui=none
 hi rubySymbol   guifg=#960B73
 hi Error        guibg=#f8f8ff guifg=#ff1100 gui=undercurl
 hi Todo         guibg=#f8f8ff guifg=#ff1100 gui=underline
-hi Label        guifg=#000000 gui=bold
-hi StorageClass guifg=#000000 gui=bold
-hi Structure    guifg=#000000 gui=bold
-hi TypeDef      guifg=#000000 gui=bold
+hi Label        guifg=#000000 gui=none
+hi StorageClass guifg=#000000 gui=none
+hi Structure    guifg=#000000 gui=none
+hi TypeDef      guifg=#000000 gui=none
 " }}}
 
 " {{{ Completion menus
 hi WildMenu     guifg=#7fbdff guibg=#425c78 gui=none
 
-hi Pmenu        guibg=#808080 guifg=#ffffff gui=bold
+hi Pmenu        guibg=#808080 guifg=#ffffff gui=none
 hi PmenuSel     guibg=#cdcdfd guifg=#000000 gui=italic
 hi PmenuSbar    guibg=#000000 guifg=#444444
 hi PmenuThumb   guibg=#aaaaaa guifg=#aaaaaa
@@ -133,7 +133,7 @@ hi link schemeFunc      Statement
 " {{{ Tabs (non-gui0
 hi TabLine		guifg=#404040 guibg=#dddddd gui=none
 hi TabLineFill	guifg=#404040 guibg=#dddddd gui=none
-hi TabLineSel	guifg=#404040 gui=bold
+hi TabLineSel	guifg=#404040 gui=none
 " }}}
 "
 " vim: sw=4 ts=4 foldmethod=marker
